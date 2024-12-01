@@ -38,9 +38,7 @@ public class LajmiService {
         return FullLajmiResponse.builder()
                 .teksti(lajmi.getTeksti())
                 .kohaPublikimit(lajmi.getKohaPublikimit())
-                .kategoria(Kategoria.builder()
-                        .name(lajmi.getKategoria().getName())
-                        .build())
+                .kategoria(lajmi.getKategoria())
                 .komentet(komentet)
                 .build();
     }

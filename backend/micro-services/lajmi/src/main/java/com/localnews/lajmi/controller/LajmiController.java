@@ -1,6 +1,7 @@
 package com.localnews.lajmi.controller;
 
 import com.localnews.lajmi.entity.Lajmi;
+import com.localnews.lajmi.response.FullLajmiResponse;
 import com.localnews.lajmi.service.LajmiService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -27,5 +28,12 @@ public class LajmiController {
     @GetMapping
     public ResponseEntity<List<Lajmi>> findAllLajmet(){
         return ResponseEntity.ok(lajmiService.findAllLajmet());
+    }
+
+    @GetMapping("/with-comments/{lajmi-id}")
+    public ResponseEntity<FullLajmiResponse> findLajmetWithComments(
+            @PathVariable("lajmi-id") Integer lajmiId
+    ){
+        return ResponseEntity.ok(lajmiService.findLajmetWithComments(lajmiId));
     }
 }

@@ -47,5 +47,12 @@ public class KomentiController {
         return ResponseEntity.ok(service.getReplies(komenti_Id));
     }
 
+    @GetMapping("/lajmi/{lajmi-id}")
+    public ResponseEntity<List<Komenti>> findAllKomentetByLajmi(
+            @PathVariable("lajmi-id") Integer lajmiId
+    ) {
+        return ResponseEntity.ok(service.findAllKomentetByLajmiId(lajmiId));
+    }
+
 }
 

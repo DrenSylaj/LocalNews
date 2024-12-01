@@ -29,5 +29,7 @@ public class Komenti {
 
     @OneToMany(mappedBy = "parent", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Komenti> replies = new ArrayList<>();
+
+    private Integer lajmiId;
 }
 

@@ -47,4 +47,8 @@ public class KomentiService {
 
         return komenti.getReplies();
     }
+
+    public List<Komenti> findAllKomentetByLajmiId(Integer lajmiId) {
+        return repository.findAllByLajmiId(lajmiId);
+    }
 }

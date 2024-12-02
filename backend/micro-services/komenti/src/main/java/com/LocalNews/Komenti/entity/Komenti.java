@@ -1,5 +1,6 @@
 package com.LocalNews.Komenti.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -17,7 +18,6 @@ public class Komenti {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-
     private String teksti;
 
     private Integer likes = 0;
@@ -28,6 +28,7 @@ public class Komenti {
     private Komenti parent;
 
     @OneToMany(mappedBy = "parent", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Komenti> replies = new ArrayList<>();
 
     private Integer lajmiId;

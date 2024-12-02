@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/backend/micro-services/gateway/pom.xml" />
         <option value="$PROJECT_DIR$/backend/micro-services/lajmi/pom.xml" />
         <option value="$PROJECT_DIR$/backend/micro-services/Komenti/pom.xml" />
+        <option value="$PROJECT_DIR$/backend/micro-services/user/pom.xml" />
       </list>
     </option>
   </component>

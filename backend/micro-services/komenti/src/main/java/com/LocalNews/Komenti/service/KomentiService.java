@@ -32,13 +32,13 @@ public class KomentiService {
         return repository.findAll();
     }
 
-    public Komenti shtoReply(Integer komenti_id, Komenti reply) {
+    public void shtoReply(Integer komenti_id, Komenti reply) {
         Komenti komenti = repository.findById(komenti_id)
                 .orElseThrow(() -> new IllegalArgumentException("Komenti nuk u gjet!"));
 
         reply.setParent(komenti);
 
-        return  repository.save(reply);
+        repository.save(reply);
     }
 
     public List<Komenti> getReplies(Integer komenti_id) {

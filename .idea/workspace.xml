@@ -5,28 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="577bb564-321e-4e73-a978-801de078c350" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/LocalNews.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/src/main/java/com/LocalNews/Komenti/KomentiApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/src/main/java/com/LocalNews/Komenti/controller/KomentiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/src/main/java/com/LocalNews/Komenti/entity/Komenti.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/src/main/java/com/LocalNews/Komenti/repository/KomentiRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/src/main/java/com/LocalNews/Komenti/service/KomentiService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/src/test/java/com/LocalNews/Komenti/KomentiApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/controller/TagLajmiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/entity/TagLajmi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/repository/TagLajmiRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/service/TagLajmiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/micro-services/config-server/src/main/resources/configurations/komentet.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/config-server/src/main/resources/configurations/komentet.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/micro-services/config-server/src/main/resources/configurations/lajmet.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/config-server/src/main/resources/configurations/lajmet.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/micro-services/komenti/src/main/java/com/LocalNews/Komenti/controller/KomentiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/komenti/src/main/java/com/LocalNews/Komenti/controller/KomentiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/controller/TagController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/controller/TagController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,21 +48,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.DiscoveryApplication.executor": "Run",
-    "Application.KomentiApplication.executor": "Run",
-    "Application.LajmiApplication.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/harve/Documents/GitHub/LocalNews/backend/micro-services/Komenti/pom.xml"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DiscoveryApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.KomentiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LajmiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.UserApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/harve/Documents/GitHub/LocalNews/backend/micro-services/user/pom.xml&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\dren\LocalNews\backend\micro-services" />

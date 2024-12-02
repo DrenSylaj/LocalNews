@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="config-server" />
         <module name="Komenti" />
+        <module name="user" />
         <module name="discovery" />
         <module name="gateway" />
         <module name="lajmi" />
@@ -22,6 +23,7 @@
       <module name="discovery" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="lajmi" options="-parameters" />
+      <module name="user" options="-parameters" />
     </option>
   </component>
 </project>

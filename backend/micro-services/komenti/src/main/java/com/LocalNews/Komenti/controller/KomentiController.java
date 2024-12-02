@@ -32,19 +32,19 @@ public class KomentiController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Komenti>> findAllStudenti() {
+    public ResponseEntity<List<Komenti>> findAllKomentet() {
         return ResponseEntity.ok(service.findAllKomentet());
     }
 
-    @GetMapping("/{komenti_id}/replies")
+    @PostMapping("/reply/{komenti_id}")
     @ResponseStatus(HttpStatus.CREATED)
-    public Komenti shtoReply(@PathVariable Integer komenti_id, @RequestBody Komenti reply) {
-        return service.shtoReply(komenti_id, reply);
+    public void shtoReply(@PathVariable Integer komenti_id, @RequestBody Komenti reply) {
+        service.shtoReply(komenti_id, reply);
     }
 
-    @GetMapping("/{parentId}/replies")
-    public ResponseEntity<List<Komenti>> getReplies(@PathVariable Integer komenti_Id) {
-        return ResponseEntity.ok(service.getReplies(komenti_Id));
+    @GetMapping("/replies/{parentId}")
+    public ResponseEntity<List<Komenti>> getReplies(@PathVariable Integer parentId) {
+        return ResponseEntity.ok(service.getReplies(parentId));
     }
 
     @GetMapping("/lajmi/{lajmi-id}")

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +14,9 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Komenti {
+public class Komenti implements Serializable {
+
+    private static final long serialVersionUID =1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

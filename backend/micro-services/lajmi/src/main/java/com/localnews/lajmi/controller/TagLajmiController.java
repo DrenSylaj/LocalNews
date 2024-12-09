@@ -17,18 +17,18 @@ public class TagLajmiController {
 
     private final TagLajmiService tagLajmiService;
 
-    @PostMapping("/{lajmiId}/tags/{tagId}")
+    @PostMapping("/{tagId}/{lajmiId}")
     public void addTagToLajmi(@PathVariable Integer lajmiId, @PathVariable Integer tagId) {
         tagLajmiService.shtoTagLajmi(lajmiId, tagId);
     }
 
-    @DeleteMapping("/{lajmiId}/tags")
+    @DeleteMapping("/{tagId}/{lajmiId}")
     public ResponseEntity<Void> deleteTagFromLajmi(@PathVariable Integer lajmiId, @PathVariable Integer tagId) {
         tagLajmiService.removeTagFromLajmi(lajmiId, tagId);
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/{lajmiId}/tags")
+    @GetMapping("/{lajmiId}")
     public ResponseEntity<List<Tag>> getTagsOfLajmi(@PathVariable Integer lajmiId) {
         return ResponseEntity.ok(tagLajmiService.getTagsOfLajmi(lajmiId));
     }

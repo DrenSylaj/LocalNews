@@ -1,7 +1,10 @@
 package com.LocalNews.Komenti.controller;
 
+import com.LocalNews.Komenti.entity.Dislike;
 import com.LocalNews.Komenti.entity.Komenti;
+import com.LocalNews.Komenti.entity.Like;
 import com.LocalNews.Komenti.service.KomentiService;
+import com.LocalNews.Komenti.service.LikeService;
 import jakarta.ws.rs.Path;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -16,6 +19,7 @@ import java.util.List;
 public class KomentiController {
 
     private final KomentiService service;
+    private final LikeService likeService;
 
     @PostMapping
     @ResponseStatus(HttpStatus.ACCEPTED)
@@ -29,6 +33,11 @@ public class KomentiController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteComment(@PathVariable Integer id) {
         service.deleteKomenti(id);
+    }
+
+    @DeleteMapping("/komentet/{id}")
+    public void deleteComments(@PathVariable Integer id) {
+        service.deleteKomentetELajmit(id);
     }
 
     @GetMapping
@@ -47,11 +56,55 @@ public class KomentiController {
         return ResponseEntity.ok(service.getReplies(parentId));
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Komenti> findKomentiById(@PathVariable("id") Integer id) {
+        return ResponseEntity.ok(service.findKomentiById(id));
+    }
+
     @GetMapping("/lajmi/{lajmi-id}")
     public ResponseEntity<List<Komenti>> findAllKomentetByLajmi(
             @PathVariable("lajmi-id") Integer lajmiId
     ) {
         return ResponseEntity.ok(service.findAllKomentetByLajmiId(lajmiId));
+    }
+
+
+    // Like-Controller
+    @PostMapping("/likes/{userId}/{commentId}/{isLike}")
+    public ResponseEntity<Like> addLike(
+            @PathVariable("userId") Integer userId,
+            @PathVariable("commentId") Integer commentId,
+            @PathVariable("isLike") boolean isLike
+    ) {
+        Like like = likeService.addLike(userId, commentId, isLike);
+
+        return ResponseEntity.ok(like);
+    }
+
+    @PostMapping("/dislikes/{userId}/{commentId}/{isLike}")
+    public ResponseEntity<Dislike> removeLike(
+            @PathVariable("userId") Integer userId,
+            @PathVariable("commentId") Integer commentId,
+            @PathVariable("isLike") boolean isLike
+    ) {
+        Dislike dislike = likeService.addDislike(userId, commentId, isLike);
+
+        return ResponseEntity.ok(dislike);
+    }
+
+    @DeleteMapping("/dislikes/{id}")
+    public String removeDislike(@PathVariable("id") Integer id) {
+        return likeService.deleteDislike(id);
+    }
+
+    @DeleteMapping("/likes/{id}")
+    public String removeLike(@PathVariable("id") Integer id) {
+        return likeService.deleteLike(id);
+    }
+
+    @GetMapping("/likes/{userId}")
+    public ResponseEntity<List<Like>> getLikesByUserId(@PathVariable("userId") Integer userId) {
+        return ResponseEntity.ok(likeService.getLikesByUserId(userId));
     }
 
 }

@@ -4,6 +4,8 @@ import com.localnews.lajmi.entity.Lajmi;
 import com.localnews.lajmi.response.FullLajmiResponse;
 import com.localnews.lajmi.service.LajmiService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,10 +32,23 @@ public class LajmiController {
         return ResponseEntity.ok(lajmiService.findAllLajmet());
     }
 
+    @GetMapping("/{id}")
+    public Lajmi findLajmiById(
+            @PathVariable int id
+    ){
+        return lajmiService.findById(id);
+    }
+
     @GetMapping("/with-comments/{lajmi-id}")
     public ResponseEntity<FullLajmiResponse> findLajmetWithComments(
             @PathVariable("lajmi-id") Integer lajmiId
     ){
         return ResponseEntity.ok(lajmiService.findLajmetWithComments(lajmiId));
+    }
+
+    @DeleteMapping("/{id}")
+    public String deleteLajmi(@PathVariable int id) {
+        return lajmiService.deleteLajmi(id);
+
     }
 }

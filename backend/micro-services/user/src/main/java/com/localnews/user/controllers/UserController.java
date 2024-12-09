@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/api/v1/user")
 @RequiredArgsConstructor
 public class UserController {
     private final UserService service;
@@ -25,8 +25,8 @@ public class UserController {
         return ResponseEntity.ok(service.findAllUsers());
     }
 
-    @GetMapping("/{user-id}")
-    public Optional<User> findUserById(@PathVariable("user-id") Integer userId){
-        return service.findUserById(userId);
+    @GetMapping("/{id}")
+    public User findUserById(@PathVariable("id") Integer id){
+        return service.findUserById(id).get();
     }
 }

@@ -3,6 +3,8 @@ package com.LocalNews.Komenti.service;
 import com.LocalNews.Komenti.entity.Komenti;
 import com.LocalNews.Komenti.repository.KomentiRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,6 +22,12 @@ public class KomentiService {
         return repository.save(komenti);
     }
 
+    @Cacheable(value = "komenti", key="#id")
+    public Komenti findKomentiById(Integer id) {
+        return repository.findById(id).orElseThrow(() -> new RuntimeException("Komenti nuk u gjete!"));
+    }
+
+    @CacheEvict(value = "komenti", key="#id")
     public void deleteKomenti(Integer id) {
         if (!repository.existsById(id)){
             throw new IllegalArgumentException("Komenti me ID " + id + " nuk ekziston!");
@@ -27,6 +35,17 @@ public class KomentiService {
         repository.deleteById(id);
     }
 
+    @CacheEvict(value = "komenti", key="#id")
+    public Komenti updateKomenti(Integer id, String teksti) {
+        Komenti komenti = repository.findById(id).orElseThrow(
+                () -> new RuntimeException("Komenti nuk u gjete!")
+        );
+
+        komenti.setTeksti(teksti);
+
+        return repository.save(komenti);
+
+    }
 
     public List<Komenti> findAllKomentet() {
         return repository.findAll();
@@ -50,5 +69,11 @@ public class KomentiService {
 
     public List<Komenti> findAllKomentetByLajmiId(Integer lajmiId) {
         return repository.findAllByLajmiId(lajmiId);
+    }
+
+    public void deleteKomentetELajmit(Integer lajmiId) {
+        List<Komenti> komentet = findAllKomentetByLajmiId(lajmiId);
+
+        repository.deleteAll(komentet);
     }
 }

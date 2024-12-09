@@ -17,10 +17,10 @@ public class TagLajmi {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @ManyToOne
+    @ManyToOne(optional = false, cascade = CascadeType.ALL)
     private Lajmi lajmi;
 
 
-    @ManyToOne
+    @ManyToOne(optional = false, cascade = CascadeType.ALL)
     private Tag tag;
 }

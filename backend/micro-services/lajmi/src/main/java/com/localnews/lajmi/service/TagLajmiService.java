@@ -38,6 +38,15 @@ public class TagLajmiService {
         tagLajmiRepository.delete(tagLajmi);
     }
 
+    public void removeTags(int id) {
+       List<TagLajmi> tagLajmet = tagLajmiRepository.findByLajmiId(id);
+
+       if(!tagLajmet.isEmpty()) {
+           tagLajmiRepository.deleteAll(tagLajmet);
+       }
+
+    }
+
     public List<Tag> getTagsOfLajmi(Integer lajmiId) {
         return tagLajmiRepository.findTagsByLajmiId(lajmiId);
     }
@@ -45,4 +54,6 @@ public class TagLajmiService {
     public List<Lajmi> getLajmetOfTag(Integer tagId) {
         return tagLajmiRepository.findLajmeByTagId(tagId);
     }
+
+
 }

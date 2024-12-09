@@ -17,6 +17,8 @@ public interface TagLajmiRepository extends JpaRepository<TagLajmi, Integer> {
     @Query("SELECT tl.tag From TagLajmi tl WHERE tl.lajmi.id = :lajmiId")
     List<Tag> findTagsByLajmiId(@Param("lajmiId") Integer lajmiId);
 
+    List<TagLajmi> findByLajmiId(Integer id);
+
     @Query("SELECT tl.lajmi From TagLajmi tl WHERE tl.tag.id = :tagId")
     List<Lajmi> findLajmeByTagId(@Param("tagId") Integer tagId);
 }

@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface KomentiRepository extends JpaRepository<Komenti, Integer> {
     List<Komenti> findAllByLajmiId(Integer lajmiId);
+
 }

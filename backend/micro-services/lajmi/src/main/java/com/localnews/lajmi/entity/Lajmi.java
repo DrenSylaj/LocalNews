@@ -6,6 +6,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Entity
@@ -14,7 +15,9 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Lajmi {
+public class Lajmi implements Serializable {
+
+    private static final long serialVersionUID =1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

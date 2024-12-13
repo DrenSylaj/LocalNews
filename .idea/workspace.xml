@@ -5,41 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="577bb564-321e-4e73-a978-801de078c350" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/src/main/java/com/LocalNews/Komenti/CacheConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/src/main/java/com/LocalNews/Komenti/DTO/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/src/main/java/com/LocalNews/Komenti/client/UserClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/src/main/java/com/LocalNews/Komenti/entity/Dislike.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/src/main/java/com/LocalNews/Komenti/entity/Like.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/src/main/java/com/LocalNews/Komenti/repository/DislikeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/src/main/java/com/LocalNews/Komenti/repository/LikeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/src/main/java/com/LocalNews/Komenti/service/LikeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/CacheConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/java/com/localnews/ankesa/AnkesaApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/java/com/localnews/ankesa/Controllers/AnkesaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/java/com/localnews/ankesa/Entity/Ankesa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/java/com/localnews/ankesa/Repositories/AnkesaRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/java/com/localnews/ankesa/Services/AnkesaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/src/test/java/com/localnews/ankesa/AnkesaApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/micro-services/config-server/src/main/resources/configurations/ankesat.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/micro-services/user/src/main/java/com/localnews/user/Client/AnkesaClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/micro-services/user/src/main/java/com/localnews/user/DTO/AnkesaDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/config-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/config-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/config-server/src/main/resources/configurations/komentet.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/config-server/src/main/resources/configurations/komentet.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/config-server/src/main/resources/configurations/lajmet.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/config-server/src/main/resources/configurations/lajmet.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/micro-services/config-server/src/main/resources/configurations/users.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/config-server/src/main/resources/configurations/users.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/komenti/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/komenti/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/komenti/src/main/java/com/LocalNews/Komenti/KomentiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/komenti/src/main/java/com/LocalNews/Komenti/KomentiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/komenti/src/main/java/com/LocalNews/Komenti/controller/KomentiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/komenti/src/main/java/com/LocalNews/Komenti/controller/KomentiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/komenti/src/main/java/com/LocalNews/Komenti/entity/Komenti.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/komenti/src/main/java/com/LocalNews/Komenti/entity/Komenti.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/komenti/src/main/java/com/LocalNews/Komenti/repository/KomentiRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/komenti/src/main/java/com/LocalNews/Komenti/repository/KomentiRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/komenti/src/main/java/com/LocalNews/Komenti/service/KomentiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/komenti/src/main/java/com/LocalNews/Komenti/service/KomentiService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/lajmi/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/LajmiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/LajmiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/client/KomentiClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/client/KomentiClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/controller/LajmiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/controller/LajmiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/controller/TagLajmiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/controller/TagLajmiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/entity/Kategoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/entity/Kategoria.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/entity/Lajmi.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/entity/Lajmi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/entity/TagLajmi.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/entity/TagLajmi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/repository/TagLajmiRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/repository/TagLajmiRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/service/LajmiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/service/LajmiService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/service/TagLajmiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/service/TagLajmiService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/user/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/user/src/main/java/com/localnews/user/UserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/user/src/main/java/com/localnews/user/UserApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/user/src/main/java/com/localnews/user/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/user/src/main/java/com/localnews/user/config/SecurityConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/micro-services/user/src/main/java/com/localnews/user/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/user/src/main/java/com/localnews/user/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/micro-services/user/src/main/java/com/localnews/user/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/user/src/main/java/com/localnews/user/services/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,31 +72,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Config Server.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Discovery.executor&quot;: &quot;Run&quot;,
-    &quot;Application.DiscoveryApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Gateway.executor&quot;: &quot;Run&quot;,
-    &quot;Application.GatewayApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Komenti.executor&quot;: &quot;Run&quot;,
-    &quot;Application.KomentiApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Lajmi.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LajmiApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.User.executor&quot;: &quot;Run&quot;,
-    &quot;Application.UserApplication.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/harve/Desktop/alibou/security&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Ankesa.executor": "Run",
+    "Application.Config Server.executor": "Run",
+    "Application.ConfigServerApplication.executor": "Run",
+    "Application.Discovery.executor": "Run",
+    "Application.DiscoveryApplication.executor": "Run",
+    "Application.Gateway.executor": "Run",
+    "Application.GatewayApplication.executor": "Run",
+    "Application.Komenti.executor": "Run",
+    "Application.KomentiApplication.executor": "Run",
+    "Application.Lajmi.executor": "Run",
+    "Application.LajmiApplication.executor": "Run",
+    "Application.User.executor": "Run",
+    "Application.UserApplication.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/harve/Documents/GitHub/LocalNews/backend/micro-services/ankesa/pom.xml"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\dren\LocalNews\backend\micro-services" />
@@ -130,7 +120,14 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Compound.LocalNews">
+  <component name="RunManager" selected="Application.Ankesa">
+    <configuration name="Ankesa" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.localnews.ankesa.AnkesaApplication" />
+      <module name="ankesa" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Config Server" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.localnews.config_server.ConfigServerApplication" />
       <module name="config-server" />
@@ -190,6 +187,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Ankesa" />
       <item itemvalue="Application.Discovery" />
       <item itemvalue="Application.User" />
       <item itemvalue="Application.Config Server" />

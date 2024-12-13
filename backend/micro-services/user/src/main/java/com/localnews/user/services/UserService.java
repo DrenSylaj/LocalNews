@@ -1,6 +1,8 @@
 package com.localnews.user.services;
 
+import com.localnews.user.Client.AnkesaClient;
 import com.localnews.user.repositories.UserRepository;
+import jakarta.ws.rs.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import com.localnews.user.entities.User;
@@ -13,6 +15,7 @@ import java.util.Optional;
 public class UserService {
 
     private final UserRepository repository;
+    private final AnkesaClient ankesaClient;
 
     public void saveUser(User user){
         repository.save(user);
@@ -24,5 +27,15 @@ public class UserService {
 
     public List<User> findAllUsers(){
         return repository.findAll();
+    }
+
+    public void deleteUser(Integer id) {
+
+        User user  = findUserById(id).orElseThrow(
+                () -> new NotFoundException("Nuk u gjete!")
+        );
+
+        ankesaClient.deleteAnkesatByUserId(id);
+        repository.deleteById(id);
     }
 }

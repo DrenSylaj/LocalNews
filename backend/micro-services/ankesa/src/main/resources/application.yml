@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: ankesat
+  config:
+    import: optional:configserver:http://localhost:8888

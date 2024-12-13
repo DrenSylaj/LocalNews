@@ -1,18 +1,17 @@
 eureka:
   instance:
-    name: localhost
+    hostname: localhost
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
-
 server:
-  port: 8111
+  port: 8061
 spring:
   application:
-    name: users
+    name: ankesat
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/users
+    url: jdbc:postgresql://localhost:5432/ankesat
     username: postgres
     password: dren123
   jpa:
@@ -21,6 +20,3 @@ spring:
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
-application:
-  config:
-    ankesat-url: http://localhost:8111/api/v1/ankesa

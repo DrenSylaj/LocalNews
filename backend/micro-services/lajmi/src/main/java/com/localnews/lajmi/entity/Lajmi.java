@@ -6,6 +6,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
@@ -17,6 +18,7 @@ import java.sql.Timestamp;
 @Builder
 public class Lajmi implements Serializable {
 
+    @Serial
     private static final long serialVersionUID =1L;
 
     @Id

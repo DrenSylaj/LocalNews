@@ -2,23 +2,25 @@ eureka:
   client:
     register-with-eureka: false
 
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.springframework.cloud.gateway: DEBUG
+
 spring:
   application:
     name: gateway
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
       routes:
         - id: komentet
           uri: http://localhost:8071
           predicates:
-            - Path = /api/v1/komentet/**
+            - Path=/api/v1/komentet/**
 
         - id: lajmet
           uri: http://localhost:8090
           predicates:
-            - Path = /api/v1/lajmet/**
+            - Path=/api/v1/lajmet/**
 server:
   port: 8222

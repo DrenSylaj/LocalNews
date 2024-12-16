@@ -1,0 +1,143 @@
+
+services:
+  db_users:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: dren123
+      POSTGRES_DB: users
+    networks:
+      - news-network
+
+  db_komentet:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: dren123
+      POSTGRES_DB: komentet
+    networks:
+      - news-network
+  db_lajmet:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: dren123
+      POSTGRES_DB: localnews
+    networks:
+      - news-network
+  db_ankesat:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: dren123
+      POSTGRES_DB: ankesat
+    networks:
+      - news-network
+#  config-server:
+#    build:
+#      context: ./config-server
+#    ports:
+#      - "8888:8888"
+#    networks:
+#      - news-network
+#    container_name: config-server
+
+  discovery:
+    build:
+      context: ./discovery
+    environment:
+      EUREKA_SERVER_URI: http://discovery:8761
+      SPRING_PROFILES_ACTIVE: docker
+    ports:
+      - "8761:8761"
+    networks:
+      - news-network
+    container_name: discovery
+
+  gateway:
+    build:
+      context: ./gateway
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    ports:
+      - "8222:8222"
+    networks:
+      - news-network
+    container_name: gateway
+    depends_on:
+      - discovery
+
+  komentet:
+    build:
+      context: ./Komenti
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db_komentet:5432/komentet
+      APPLICATION_CONFIG_USERS_URL: http://users:8111
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: dren123
+    ports:
+      - "8071:8071"
+    networks:
+      - news-network
+    container_name: komentet
+    depends_on:
+      - db_komentet
+      - discovery
+      - users
+
+  ankesat:
+    build:
+      context: ./ankesa
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db_ankesat:5432/ankesat
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: dren123
+    ports:
+      - "8061:8061"
+    networks:
+      - news-network
+    container_name: ankesat
+    depends_on:
+      - db_ankesat
+      - discovery
+
+  lajmet:
+    build:
+      context: ./lajmi
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db_lajmet:5432/localnews
+      APPLICATION_CONFIG_KOMENTET_URL: http://komentet:8071
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: dren123
+    ports:
+      - "8090:8090"
+    networks:
+      - news-network
+    container_name: lajmet
+    depends_on:
+      - discovery
+      - db_lajmet
+
+  users:
+    build:
+      context: ./user
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db_users:5432/users
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: dren123
+      SPRING_PROFILES_ACTIVE: docker
+    ports:
+      - "8111:8111"
+    networks:
+      - news-network
+    container_name: users
+    depends_on:
+      - discovery
+      - db_users
+
+networks:
+  news-network:
+    driver: bridge

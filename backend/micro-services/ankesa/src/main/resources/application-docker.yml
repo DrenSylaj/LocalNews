@@ -1,24 +1,23 @@
 eureka:
   instance:
-    hostname: komentet
+    hostname: ankesat
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://discovery:8761/eureka
 server:
-  port: 8071
+  port: 8061
+
 spring:
+  application:
+    name: ankesat
   cloud:
     config:
       enabled: false
     import-check:
       enabled: false
-  profiles:
-    active: native
-  application:
-    name: komentet
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/komentet
+    url: jdbc:postgresql://db_ankesat:5432/ankesat
     username: postgres
     password: dren123
   jpa:
@@ -27,6 +26,3 @@ spring:
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
-application:
-  config:
-    users-url: http://localhost:8111/api/v1/user

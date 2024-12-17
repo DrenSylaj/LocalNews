@@ -4,19 +4,20 @@ import com.localnews.lajmi.entity.Lajmi;
 import com.localnews.lajmi.response.FullLajmiResponse;
 import com.localnews.lajmi.service.LajmiService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.cache.annotation.Cacheable;
-import org.springframework.cache.annotation.Caching;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import org.slf4j.Logger;
 
 @RestController
 @RequestMapping("/api/v1/lajmet")
 @RequiredArgsConstructor
 public class LajmiController {
 
+    private final Logger logger = LoggerFactory.getLogger(LajmiController.class);
     private final LajmiService lajmiService;
 
     @PostMapping
@@ -24,6 +25,7 @@ public class LajmiController {
     public void save(
             @RequestBody Lajmi lajmi
             ){
+        logger.info("Lajmi "+lajmi+" has been saved");
         lajmiService.saveLajmi(lajmi);
     }
 
@@ -43,11 +45,13 @@ public class LajmiController {
     public ResponseEntity<FullLajmiResponse> findLajmetWithComments(
             @PathVariable("lajmi-id") Integer lajmiId
     ){
+        logger.info("Comments of lajmi with id: "+lajmiId+" have been retrieved");
         return ResponseEntity.ok(lajmiService.findLajmetWithComments(lajmiId));
     }
 
     @DeleteMapping("/{id}")
     public String deleteLajmi(@PathVariable int id) {
+        logger.info("Lajmi with id: "+id+" has been deleted");
         return lajmiService.deleteLajmi(id);
 
     }

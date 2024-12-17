@@ -7,7 +7,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableCaching
-@EnableFeignClients(basePackages = "com.LocalNews.Komenti.client")
+@EnableFeignClients
 public class KomentiApplication {
 
 	public static void main(String[] args) {

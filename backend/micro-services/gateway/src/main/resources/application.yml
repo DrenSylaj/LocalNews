@@ -9,6 +9,9 @@ spring:
     active: native
   application:
     name: gateway
+  redis:
+    host: localhost
+    port: 6379
   cloud:
     discovery:
       locator:
@@ -29,5 +32,10 @@ spring:
           uri: http://localhost:8090
           predicates:
             - Path=/api/v1/lajmet/**
+
+        - id: ankesat
+          uri: http://localhost:8061
+          predicates:
+            - Path=/api/v1/ankesa/**
 server:
   port: 8222

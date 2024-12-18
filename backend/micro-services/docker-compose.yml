@@ -33,14 +33,6 @@ services:
       POSTGRES_DB: ankesat
     networks:
       - news-network
-#  config-server:
-#    build:
-#      context: ./config-server
-#    ports:
-#      - "8888:8888"
-#    networks:
-#      - news-network
-#    container_name: config-server
 
   discovery:
     build:
@@ -66,6 +58,7 @@ services:
     container_name: gateway
     depends_on:
       - discovery
+      - redis
 
   komentet:
     build:
@@ -76,6 +69,8 @@ services:
       SPRING_PROFILES_ACTIVE: docker
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: dren123
+      SPRING_REDIS_HOST: redis
+      DEBUG: "1"
     ports:
       - "8071:8071"
     networks:
@@ -85,6 +80,7 @@ services:
       - db_komentet
       - discovery
       - users
+      - redis
 
   ankesat:
     build:
@@ -94,6 +90,7 @@ services:
       SPRING_PROFILES_ACTIVE: docker
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: dren123
+      SPRING_REDIS_HOST: redis
     ports:
       - "8061:8061"
     networks:
@@ -102,6 +99,7 @@ services:
     depends_on:
       - db_ankesat
       - discovery
+      - redis
 
   lajmet:
     build:
@@ -111,6 +109,7 @@ services:
       SPRING_PROFILES_ACTIVE: docker
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: dren123
+      SPRING_REDIS_HOST: redis
     ports:
       - "8090:8090"
     networks:
@@ -119,6 +118,7 @@ services:
     depends_on:
       - discovery
       - db_lajmet
+      - redis
 
   users:
     build:
@@ -136,6 +136,28 @@ services:
     depends_on:
       - discovery
       - db_users
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    environment:
+      DEBUG: "1"
+    ports:
+      - "6379:6379"
+    command: [ "redis-server", "--bind", "0.0.0.0" ]
+    networks:
+      - news-network
+
+  redisinsight:
+    image: redis/redisinsight:latest
+    container_name: redisinsight
+    ports:
+      - "5540:5540"
+    networks:
+      - news-network
+    depends_on:
+      - redis
+#
 
 networks:
   news-network:

@@ -6,13 +6,19 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
 
+import java.io.Serial;
+import java.io.Serializable;
+
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Ankesa {
+public class Ankesa implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID =1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

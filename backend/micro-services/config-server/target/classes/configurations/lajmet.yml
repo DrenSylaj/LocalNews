@@ -1,0 +1,32 @@
+eureka:
+  instance:
+    hostname: lajmet
+  client:
+    service-url:
+      defaultZone: http://discovery:8761/eureka
+
+
+server:
+  port: 8090
+spring:
+  profiles:
+    active: docker
+  application:
+    name: lajmet
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://db_lajmet:5432/localnews
+    username: postgres
+    password: dren123
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  redis:
+    host: redis
+    port: 6379
+
+application:
+  config:
+    komentet-url: http://komentet:8071/api/v1/komentet

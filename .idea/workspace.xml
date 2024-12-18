@@ -5,26 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="577bb564-321e-4e73-a978-801de078c350" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/src/main/resources/application-docker.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/resources/application-docker.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/discovery/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/discovery/src/main/resources/application-docker.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/gateway/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/gateway/src/main/resources/application-docker.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/resources/application-docker.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/user/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/user/src/main/resources/application-docker.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/src/main/java/com/LocalNews/Komenti/JedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/java/com/localnews/ankesa/CacheConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/java/com/localnews/ankesa/JedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/micro-services/config-server/target/classes/configurations/ankesat.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/JedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/micro-services/Komenti/src/main/resources/application-docker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/src/main/resources/application-docker.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/micro-services/Komenti/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/micro-services/ankesa/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/java/com/localnews/ankesa/AnkesaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/java/com/localnews/ankesa/AnkesaApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/java/com/localnews/ankesa/Entity/Ankesa.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/java/com/localnews/ankesa/Entity/Ankesa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/java/com/localnews/ankesa/Services/AnkesaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/java/com/localnews/ankesa/Services/AnkesaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/resources/application-docker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/resources/application-docker.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/discovery/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/discovery/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/micro-services/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/micro-services/gateway/src/main/resources/application-docker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/gateway/src/main/resources/application-docker.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/micro-services/gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/micro-services/komenti/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/komenti/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/micro-services/lajmi/logs/lajmi.log" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/logs/lajmi.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/micro-services/lajmi/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/user/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/user/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +36,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -91,27 +93,31 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/harve/Documents/GitHub/LocalNews/backend/micro-services/ankesa"
+    "last_opened_file_path": "C:/Users/harve/Documents/GitHub/LocalNews/backend/micro-services/ankesa/src/main/java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\harve\Documents\GitHub\LocalNews\backend\micro-services\ankesa\src\main\java" />
       <recent name="C:\Users\harve\Documents\GitHub\LocalNews\backend\micro-services\ankesa" />
+      <recent name="C:\Users\harve\Documents\GitHub\LocalNews\backend\micro-services\Komenti" />
+      <recent name="C:\Users\harve\Documents\GitHub\LocalNews\backend\micro-services\lajmi" />
       <recent name="C:\Users\harve\Documents\GitHub\LocalNews\backend\micro-services\ankesa\src\main\resources" />
-      <recent name="C:\Users\harve\Documents\GitHub\LocalNews\backend\micro-services" />
-      <recent name="C:\Users\harve\Documents\GitHub\LocalNews\backend\micro-services\user\src\main\resources" />
-      <recent name="C:\Users\harve\Documents\GitHub\LocalNews\backend\micro-services\user" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\dren\LocalNews\backend\micro-services" />
       <recent name="C:\dren\LocalNews\backend" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.localnews.ankesa" />
       <recent name="com.LocalNews.Komenti.service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.LocalNews.Komenti" />
       <recent name="com.localnews.lajmi" />
+      <recent name="com.LocalNews.Komenti" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -123,7 +129,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Ankesa">
+  <component name="RunManager" selected="Shell Script.wait-for-it.sh">
     <configuration name="Ankesa" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.localnews.ankesa.AnkesaApplication" />
       <module name="ankesa" />
@@ -189,6 +195,21 @@
         <option name="com.soywiz.korge.intellij.UpdateResourceBeforeRunTask" enabled="false" />
       </method>
     </configuration>
+    <configuration name="wait-for-it.sh" type="ShConfigurationType" temporary="true">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/backend/micro-services/wait-for-it.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/backend/micro-services" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/usr/bin/env" />
+      <option name="INTERPRETER_OPTIONS" value="bash" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Application.Ankesa" />
       <item itemvalue="Application.Discovery" />
@@ -198,7 +219,13 @@
       <item itemvalue="Application.Lajmi" />
       <item itemvalue="Application.Komenti" />
       <item itemvalue="Compound.LocalNews" />
+      <item itemvalue="Shell Script.wait-for-it.sh" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Shell Script.wait-for-it.sh" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -213,6 +240,17 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="application.yml" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

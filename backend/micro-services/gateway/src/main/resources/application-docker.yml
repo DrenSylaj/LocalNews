@@ -13,6 +13,9 @@ spring:
         enabled: false
     config:
       enabled: false
+    redis:
+      host: redis
+      port: 6379
     gateway:
       discovery:
         locator:
@@ -27,5 +30,10 @@ spring:
           uri: http://lajmet:8090
           predicates:
             - Path=/api/v1/lajmet/**
+
+        - id: ankesat
+          uri: http://ankesat:8061
+          predicates:
+            - Path=/api/v1/ankesa/**
 server:
   port: 8222

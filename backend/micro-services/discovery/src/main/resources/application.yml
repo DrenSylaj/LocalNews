@@ -9,6 +9,13 @@ spring:
   profiles:
     active: native
 
+# Actuator Prometheus Endpoint
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
+
 server:
   port: 8761
 

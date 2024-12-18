@@ -28,6 +28,14 @@ spring:
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
+# Actuator Prometheus Endpoint
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
+
+
 application:
   config:
     ankesat-url: http://localhost:8111/api/v1/ankesa

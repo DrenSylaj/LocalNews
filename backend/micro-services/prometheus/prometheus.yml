@@ -1,0 +1,24 @@
+global:
+  scrape_interval: 10s
+  evaluation_interval: 10s
+
+
+scrape_configs:
+  - job_name: 'lajmet'
+    metrics_path: 'actuator/prometheus'
+    static_configs:
+      - targets: ['lajmet:8090']
+        labels:
+          application: 'Lajmet Service Application'
+  - job_name: 'komentet'
+    metrics_path: 'actuator/prometheus'
+    static_configs:
+      - targets: ['komentet:8071']
+        labels:
+          application: 'Komenti Service Application'
+  - job_name: 'users'
+    metrics_path: 'actuator/prometheus'
+    static_configs:
+      - targets: ['users:8111']
+        labels:
+          application: 'User Service Application'

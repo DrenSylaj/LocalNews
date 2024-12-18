@@ -37,5 +37,19 @@ spring:
           uri: http://localhost:8061
           predicates:
             - Path=/api/v1/ankesa/**
+
+        - id: users
+          uri: http://localhost:8111
+          predicates:
+            - Path=/api/v1/user/**
+            - Path=/api/v1/auth/**
+
+# Actuator Prometheus Endpoint
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
+
 server:
   port: 8222

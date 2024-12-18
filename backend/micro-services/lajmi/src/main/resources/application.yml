@@ -33,6 +33,14 @@ spring:
     host: localhost
     port: 6379
 
+# Actuator Prometheus Endpoint
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
+
+
 application:
   config:
     komentet-url: http://localhost:8071/api/v1/komentet

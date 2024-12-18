@@ -30,6 +30,13 @@ spring:
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
+# Actuator Prometheus Endpoint
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
+
 application:
   config:
     users-url: http://localhost:8111/api/v1/user

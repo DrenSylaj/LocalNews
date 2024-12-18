@@ -26,7 +26,9 @@ public class User implements UserDetails {
     private LocalDate dataLindjes;
     private String gjinia;
     private String vendbanimi;
+    @Column(unique = true, nullable = false)
     private String email;
+    @Column(nullable = false)
     private String password;
     @Enumerated(EnumType.STRING)
     private Role role;

@@ -2,6 +2,7 @@ package com.localnews.user.controllers;
 
 import com.localnews.user.Client.AnkesaClient;
 import com.localnews.user.DTO.AnkesaDTO;
+import com.localnews.user.config.JwtService;
 import com.localnews.user.entities.User;
 import com.localnews.user.services.UserService;
 import lombok.RequiredArgsConstructor;
@@ -17,6 +18,7 @@ import java.util.Optional;
 public class UserController {
     private final UserService service;
     private final AnkesaClient  ankesaClient;
+    private final JwtService jwtService;
 
     @PostMapping
     public void saveUser(@RequestBody User user){
@@ -36,6 +38,11 @@ public class UserController {
     @GetMapping("/ankesat/{userId}")
     public List<AnkesaDTO> getUserAnkesat(@PathVariable Integer userId) {
         return ankesaClient.getAnkesatByUserId(userId);
+    }
+
+    @GetMapping("/jwt")
+    public Optional<User> getUserByJwt(@RequestHeader("Authorization") String jwt) {
+        return jwtService.findUserByJwt(jwt);
     }
 
 

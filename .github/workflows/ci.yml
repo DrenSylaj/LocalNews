@@ -105,13 +105,11 @@ jobs:
             docker-compose --version  
 
 
-      - name: Create Docker Config
+      - name: Set up Docker Config
         run: |
           mkdir -p /home/runner/.docker
-          echo "{\"auths\":{\"https://index.docker.io/v1/\":{\"username\":\"altin2004\",\"password\":\"Altin1234\",\"email\":\"altin2004@example.com\"}}}" > /home/runner/.docker/config.json
-          export DOCKER_CONFIG=/home/runner/.docker
-        env:
-          DOCKER_CONFIG: /home/runner/.docker
+          echo "{\"auths\":{\"https://index.docker.io/v1/\":{\"username\":\"altin2004\",\"password\":\"Altin1234\",\"email\":\"altinasllanaj04@gmail.com\"}}}" > /home/runner/.docker/config.json
+          echo "export DOCKER_CONFIG=/home/runner/.docker" >> $GITHUB_ENV
 
       - name: Debug Docker Config
         run: |
@@ -128,7 +126,6 @@ jobs:
           else
             echo "DOCKER_CONFIG directory does not exist."
           fi
-
 
       - name: Build and test Docker Compose
         run: |

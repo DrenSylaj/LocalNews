@@ -112,6 +112,22 @@ jobs:
         env:
           DOCKER_CONFIG: /home/runner/.docker
 
+      - name: Debug Docker Config
+        run: |
+          echo "DOCKER_CONFIG is set to: $DOCKER_CONFIG"
+          if [ -d "$DOCKER_CONFIG" ]; then
+            echo "DOCKER_CONFIG directory exists."
+            ls -la "$DOCKER_CONFIG"
+            if [ -f "$DOCKER_CONFIG/config.json" ]; then
+              echo "config.json exists in DOCKER_CONFIG:"
+              cat "$DOCKER_CONFIG/config.json"
+            else
+              echo "config.json not found in DOCKER_CONFIG."
+            fi
+          else
+            echo "DOCKER_CONFIG directory does not exist."
+          fi
+
 
       - name: Build and test Docker Compose
         run: |
@@ -121,5 +137,6 @@ jobs:
 
       - name: Push Docker images (optional)
         run: |
+          export DOCKER_CONFIG=/home/runner/.docker
           docker-compose build
           docker-compose push

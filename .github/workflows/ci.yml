@@ -75,7 +75,7 @@ jobs:
           cache: 'maven'
 
       - name: Build komenti with Maven
-        run: mvn clean install -X -f backend/micro-services/komenti/pom.xml -Dspring.profiles.active=ci
+        run: mvn clean install -X -f backend/micro-services/komenti/pom.xml -Dspring.profiles.active=ci -Dspring.config.location=classpath:/application-ci.yml
 
       - name: Build discovery with Maven
         run: mvn clean install -f backend/micro-services/discovery/pom.xml

@@ -121,6 +121,5 @@ jobs:
 
       - name: Push Docker images (optional)
         run: |
-          docker login -u altin2004 -p Altin1234
           docker-compose build
           docker-compose push

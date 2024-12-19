@@ -1,0 +1,116 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - CICD
+  pull_request:
+    branches:
+      - CICD
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      db_lajmet:
+        image: postgres:latest
+        ports:
+          - 5434:5432
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: dren123
+          POSTGRES_DB: localnews
+        options: --health-cmd="pg_isready -U postgres" --health-timeout=5s --health-start-period=10s --health-retries=3
+
+      db_komentet:
+        image: postgres:latest
+        ports:
+          - 5435:5432
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: dren123
+          POSTGRES_DB: komentet
+        options: --health-cmd="pg_isready -U postgres" --health-timeout=5s --health-start-period=10s --health-retries=3
+
+      db_users:
+        image: postgres:latest
+        ports:
+          - 5433:5432
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: dren123
+          POSTGRES_DB: users
+        options: --health-cmd="pg_isready -U postgres" --health-timeout=5s --health-start-period=10s --health-retries=3
+
+      db_ankesat:
+        image: postgres:latest
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: dren123
+          POSTGRES_DB: ankesat
+        options: --health-cmd="pg_isready -U postgres" --health-timeout=5s --health-start-period=10s --health-retries=3
+
+
+      redis:
+        image: redis:latest
+        ports:
+          - 6379:6379
+        options: --health-cmd="redis-cli ping" --health-interval=10s --health-timeout=5s --health-retries=5
+
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Build komenti with Maven
+        run: mvn clean install -X -f backend/micro-services/komenti/pom.xml -Dspring.profiles.active=ci
+
+      - name: Build discovery with Maven
+        run: mvn clean install -f backend/micro-services/discovery/pom.xml
+
+      - name: Build gateway with Maven
+        run: mvn clean install -f backend/micro-services/gateway/pom.xml
+
+      - name: Build lajmi with Maven
+        run: mvn clean install -f backend/micro-services/lajmi/pom.xml -Dspring.profiles.active=ci
+
+      - name: Build ankesa with Maven
+        run: mvn clean install -f backend/micro-services/ankesa/pom.xml -Dspring.profiles.active=ci
+
+      - name: Build user with Maven
+        run: mvn clean install -f backend/micro-services/user/pom.xml -Dspring.profiles.active=ci
+
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v2
+
+      - name: Install Docker Compose
+        run: |
+            cd backend/micro-services
+            sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r .tag_name)/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+            sudo chmod +x /usr/local/bin/docker-compose
+            docker-compose --version  
+
+
+      - name: Build and test Docker Compose
+        run: |
+          cd backend/micro-services
+          docker-compose -f docker-compose.yml up -d
+          docker-compose exec komentet ./run_tests.sh  # If you have a test script
+          docker-compose down
+
+      - name: Push Docker images (optional)
+        run: |
+          docker login -u altin2004 p Altin123!
+          docker-compose build
+          docker-compose push

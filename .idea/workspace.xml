@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="577bb564-321e-4e73-a978-801de078c350" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,11 +80,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\harve\Documents\GitHub\LocalNews\backend\micro-services\Komenti" />
       <recent name="C:\Users\harve\Documents\GitHub\LocalNews\backend\micro-services\user\src\main\resources" />
       <recent name="C:\Users\harve\Documents\GitHub\LocalNews\backend\micro-services\lajmi\src\main\resources" />
       <recent name="C:\Users\harve\Documents\GitHub\LocalNews\backend\micro-services\Komenti\src\main\resources" />
       <recent name="C:\Users\harve\Documents\GitHub\LocalNews\backend\micro-services\ankesa\src\main\resources" />
-      <recent name="C:\Users\harve\Documents\GitHub\LocalNews" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\dren\LocalNews\backend\micro-services" />

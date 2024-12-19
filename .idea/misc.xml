@@ -11,11 +11,12 @@
         <option value="$PROJECT_DIR$/backend/micro-services/Komenti/pom.xml" />
         <option value="$PROJECT_DIR$/backend/micro-services/user/pom.xml" />
         <option value="$PROJECT_DIR$/backend/micro-services/ankesa/pom.xml" />
+        <option value="$PROJECT_DIR$/backend/micro-services/Komenti/Komenti/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
-        <option value="$PROJECT_DIR$/backend/micro-services/Komenti/pom.xml" />
+        <option value="$PROJECT_DIR$/backend/micro-services/Komenti/Komenti/pom.xml" />
       </set>
     </option>
   </component>

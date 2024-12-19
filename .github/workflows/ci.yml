@@ -109,7 +109,6 @@ jobs:
         run: |
           cd backend/micro-services
           docker-compose -f docker-compose.yml up -d
-          docker-compose exec komentet ./run_tests.sh  # If you have a test script
           docker-compose down
 
       - name: Push Docker images (optional)

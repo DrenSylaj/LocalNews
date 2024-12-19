@@ -105,16 +105,10 @@ jobs:
             docker-compose --version  
 
 
-      - name: Ensure Docker config is created
+      - name: Configure Docker Login
         run: |
-          mkdir -p ~/.docker
-          touch ~/.docker/config.json
-        env:
-          DOCKER_CONFIG: /home/runner/.docker
-
-      - name: Docker login (secure)
-        run: |
-          echo "Altin1234" | docker login -u altin2004 --password-stdin
+          mkdir -p /home/runner/.docker
+          echo "{\"auths\":{\"https://index.docker.io/v1/\":{\"username\":\"altin2004\",\"password\":\"Altin1234\",\"email\":\"altin2004@example.com\"}}}" > /home/runner/.docker/config.json
         env:
           DOCKER_CONFIG: /home/runner/.docker
 

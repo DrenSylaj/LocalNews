@@ -70,12 +70,14 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: '17'
-          maven-version: '3.8.4'
           distribution: 'temurin'
           cache: 'maven'
 
+      - name: Clear Maven Cache
+        run: mvn dependency:purge-local-repository
+
       - name: Build komenti with Maven
-        run: mvn clean install -X -f backend/micro-services/komenti/pom.xml -Dspring.profiles.active=ci -Dspring.config.location=classpath:/application-ci.yml
+        run: mvn clean install -X -f backend/micro-services/komenti/pom.xml -Dspring.profiles.active=ci
 
       - name: Build discovery with Maven
         run: mvn clean install -f backend/micro-services/discovery/pom.xml

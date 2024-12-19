@@ -105,6 +105,20 @@ jobs:
             docker-compose --version  
 
 
+      - name: Ensure Docker config is created
+        run: |
+          mkdir -p ~/.docker
+          touch ~/.docker/config.json
+        env:
+          DOCKER_CONFIG: /home/runner/.docker
+
+      - name: Docker login (secure)
+        run: |
+          echo "Altin1234" | docker login -u altin2004 --password-stdin
+        env:
+          DOCKER_CONFIG: /home/runner/.docker
+
+
       - name: Build and test Docker Compose
         run: |
           cd backend/micro-services

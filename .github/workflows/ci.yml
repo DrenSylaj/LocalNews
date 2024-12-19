@@ -105,10 +105,11 @@ jobs:
             docker-compose --version  
 
 
-      - name: Configure Docker Login
+      - name: Create Docker Config
         run: |
           mkdir -p /home/runner/.docker
           echo "{\"auths\":{\"https://index.docker.io/v1/\":{\"username\":\"altin2004\",\"password\":\"Altin1234\",\"email\":\"altin2004@example.com\"}}}" > /home/runner/.docker/config.json
+          export DOCKER_CONFIG=/home/runner/.docker
         env:
           DOCKER_CONFIG: /home/runner/.docker
 
@@ -135,8 +136,9 @@ jobs:
           docker-compose -f docker-compose.yml up -d
           docker-compose down
 
-      - name: Push Docker images (optional)
+      - name: Docker Compose Build and Push
         run: |
-          export DOCKER_CONFIG=/home/runner/.docker
           docker-compose build
           docker-compose push
+        env:
+          DOCKER_CONFIG: /home/runner/.docker

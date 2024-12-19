@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="577bb564-321e-4e73-a978-801de078c350" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/src/main/resources/application-ci.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/resources/application-ci.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/resources/application-ci.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/user/src/main/resources/application-ci.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +70,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "CICD",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/harve/Documents/GitHub/LocalNews/backend/micro-services/user/src/main/resources",

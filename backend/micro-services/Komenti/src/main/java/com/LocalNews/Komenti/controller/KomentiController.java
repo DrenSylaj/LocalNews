@@ -69,7 +69,7 @@ public class KomentiController {
     }
 
 
-     Like-Controller
+
     @PostMapping("/likes/{userId}/{commentId}/{isLike}")
     public ResponseEntity<Like> addLike(
             @PathVariable("userId") Integer userId,

@@ -104,28 +104,7 @@ jobs:
             sudo chmod +x /usr/local/bin/docker-compose
             docker-compose --version  
 
-
-      - name: Set up Docker Config
-        run: |
-          mkdir -p /home/runner/.docker
-          echo "{\"auths\":{\"https://index.docker.io/v1/\":{\"username\":\"altin2004\",\"password\":\"Altin1234\",\"email\":\"altinasllanaj04@gmail.com\"}}}" > /home/runner/.docker/config.json
-          echo "export DOCKER_CONFIG=/home/runner/.docker" >> $GITHUB_ENV
-
-      - name: Debug Docker Config
-        run: |
-          echo "DOCKER_CONFIG is set to: $DOCKER_CONFIG"
-          if [ -d "$DOCKER_CONFIG" ]; then
-            echo "DOCKER_CONFIG directory exists."
-            ls -la "$DOCKER_CONFIG"
-            if [ -f "$DOCKER_CONFIG/config.json" ]; then
-              echo "config.json exists in DOCKER_CONFIG:"
-              cat "$DOCKER_CONFIG/config.json"
-            else
-              echo "config.json not found in DOCKER_CONFIG."
-            fi
-          else
-            echo "DOCKER_CONFIG directory does not exist."
-          fi
+      
 
       - name: Build and test Docker Compose
         run: |
@@ -135,7 +114,7 @@ jobs:
 
       - name: Docker Compose Build and Push
         run: |
+          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+          cd backend/micro-services
           docker-compose build
           docker-compose push
-        env:
-          DOCKER_CONFIG: /home/runner/.docker

@@ -97,7 +97,7 @@ jobs:
         run: mvn clean install -f backend/micro-services/ankesa/pom.xml -Dspring.profiles.active=ci
 
       - name: Build user with Maven
-
+        run: mvn clean install -f backend/micro-services/user/pom.xml -Dspring.profiles.active=ci
 
       - name: Set up Docker
         uses: docker/setup-buildx-action@v2

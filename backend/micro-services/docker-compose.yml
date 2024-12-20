@@ -37,6 +37,7 @@ services:
   discovery:
     build:
       context: ./discovery
+    image: altin2004/discovery:latest
     environment:
       EUREKA_SERVER_URI: http://discovery:8761
       SPRING_PROFILES_ACTIVE: docker
@@ -49,6 +50,7 @@ services:
   gateway:
     build:
       context: ./gateway
+    image: altin2004/gateway:latest
     environment:
       SPRING_PROFILES_ACTIVE: docker
     ports:
@@ -63,6 +65,7 @@ services:
   komentet:
     build:
       context: ./Komenti
+    image: altin2004/komentet:latest
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db_komentet:5432/komentet
       APPLICATION_CONFIG_USERS_URL: http://users:8111
@@ -85,6 +88,7 @@ services:
   ankesat:
     build:
       context: ./ankesa
+    image: altin2004/ankesat:latest
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db_ankesat:5432/ankesat
       SPRING_PROFILES_ACTIVE: docker
@@ -104,6 +108,7 @@ services:
   lajmet:
     build:
       context: ./lajmi
+    image: altin2004/lajmet:latest
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db_lajmet:5432/localnews
       SPRING_PROFILES_ACTIVE: docker
@@ -123,6 +128,7 @@ services:
   users:
     build:
       context: ./user
+    image: altin2004/users:latest
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db_users:5432/users
       SPRING_DATASOURCE_USERNAME: postgres

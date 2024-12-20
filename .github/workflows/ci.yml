@@ -91,7 +91,7 @@ jobs:
       - name: Run Test for Lajmi
         run: |
           cd backend/micro-services/lajmi
-          mvn test
+          mvn test -Dspring.profiles.active=test
 
       - name: Build ankesa with Maven
         run: mvn clean install -f backend/micro-services/ankesa/pom.xml -Dspring.profiles.active=ci

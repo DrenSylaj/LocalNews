@@ -9,7 +9,6 @@ eureka:
 server:
   port: 8090
 spring:
-
   cloud:
     config:
       enabled: false
@@ -22,6 +21,7 @@ spring:
     url: jdbc:postgresql://localhost:5434/localnews
     username: postgres
     password: dren123
+
   jpa:
     hibernate:
       ddl-auto: update

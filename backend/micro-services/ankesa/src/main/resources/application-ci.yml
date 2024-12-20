@@ -1,0 +1,31 @@
+eureka:
+  instance:
+    hostname: ankesat
+  client:
+    service-url:
+      defaultZone: http://discovery:8761/eureka
+
+server:
+  port: 8061
+
+spring:
+  application:
+    name: ankesat
+  cloud:
+    config:
+      enabled: false
+    import-check:
+      enabled: false
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/ankesat
+    username: postgres
+    password: dren123
+  redis:
+    host: redis
+    port: 6379
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect

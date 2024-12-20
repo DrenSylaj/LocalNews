@@ -5,28 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="577bb564-321e-4e73-a978-801de078c350" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/src/main/java/com/LocalNews/Komenti/JedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/java/com/localnews/ankesa/CacheConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/java/com/localnews/ankesa/JedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/config-server/target/classes/configurations/ankesat.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/java/com/localnews/lajmi/JedisConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/Komenti/src/main/resources/application-docker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/src/main/resources/application-docker.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/Komenti/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/Komenti/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/ankesa/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/java/com/localnews/ankesa/AnkesaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/java/com/localnews/ankesa/AnkesaApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/java/com/localnews/ankesa/Entity/Ankesa.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/java/com/localnews/ankesa/Entity/Ankesa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/java/com/localnews/ankesa/Services/AnkesaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/java/com/localnews/ankesa/Services/AnkesaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/resources/application-docker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/resources/application-docker.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/ankesa/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/micro-services/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/gateway/src/main/resources/application-docker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/gateway/src/main/resources/application-docker.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/komenti/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/komenti/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/lajmi/logs/lajmi.log" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/logs/lajmi.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/lajmi/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/micro-services/lajmi/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,42 +50,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.Ankesa.executor": "Run",
-    "Application.Config Server.executor": "Run",
-    "Application.ConfigServerApplication.executor": "Run",
-    "Application.Discovery.executor": "Run",
-    "Application.DiscoveryApplication.executor": "Run",
-    "Application.Gateway.executor": "Run",
-    "Application.GatewayApplication.executor": "Run",
-    "Application.Komenti.executor": "Run",
-    "Application.KomentiApplication.executor": "Run",
-    "Application.Lajmi.executor": "Run",
-    "Application.LajmiApplication.executor": "Run",
-    "Application.User.executor": "Run",
-    "Application.UserApplication.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/harve/Documents/GitHub/LocalNews/backend/micro-services/ankesa/src/main/java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Ankesa.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Config Server.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Discovery.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DiscoveryApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Gateway.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Komenti.executor&quot;: &quot;Run&quot;,
+    &quot;Application.KomentiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Lajmi.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LajmiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.User.executor&quot;: &quot;Run&quot;,
+    &quot;Application.UserApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;CICD&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/harve/Documents/GitHub/LocalNews/backend/micro-services/Komenti/pom.xml&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\harve\Documents\GitHub\LocalNews\backend\micro-services\ankesa\src\main\java" />
-      <recent name="C:\Users\harve\Documents\GitHub\LocalNews\backend\micro-services\ankesa" />
+      <recent name="C:\Users\harve\Documents\GitHub\LocalNews\backend\micro-services\" />
       <recent name="C:\Users\harve\Documents\GitHub\LocalNews\backend\micro-services\Komenti" />
-      <recent name="C:\Users\harve\Documents\GitHub\LocalNews\backend\micro-services\lajmi" />
-      <recent name="C:\Users\harve\Documents\GitHub\LocalNews\backend\micro-services\ankesa\src\main\resources" />
+      <recent name="C:\Users\harve\Documents\GitHub\LocalNews\backend\micro-services\user\src\main\resources" />
+      <recent name="C:\Users\harve\Documents\GitHub\LocalNews\backend\micro-services\lajmi\src\main\resources" />
+      <recent name="C:\Users\harve\Documents\GitHub\LocalNews\backend\micro-services\Komenti\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\dren\LocalNews\backend\micro-services" />

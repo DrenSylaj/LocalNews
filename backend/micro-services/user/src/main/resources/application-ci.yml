@@ -1,0 +1,39 @@
+eureka:
+  instance:
+    name: users
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+server:
+  port: 8111
+spring:
+  cloud:
+    config:
+      enabled: false
+    import-check:
+      enabled: false
+  application:
+    name: users
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5433/users
+    username: postgres
+    password: dren123
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
+
+
+application:
+  config:
+    ankesat-url: http://localhost:8111/api/v1/ankesa
+    secret-key: 598CCC87F435776673862D86F8B93B2B67A0C2CEA75F91CF89A285D971E7C12F

@@ -88,15 +88,17 @@ jobs:
       - name: Build lajmi with Maven
         run: mvn clean install -f backend/micro-services/lajmi/pom.xml -Dspring.profiles.active=ci
 
+      - name: Run Test for Lajmi
+        run: |
+          cd backend/micro-services/lajmi
+          mvn test
+
       - name: Build ankesa with Maven
         run: mvn clean install -f backend/micro-services/ankesa/pom.xml -Dspring.profiles.active=ci
 
       - name: Build user with Maven
-        run: |
-          mvn clean install -f backend/micro-services/user/pom.xml -Dspring.profiles.active=ci
-          cd backend/micro-services/lajmi
-          mvn test
-          
+
+
       - name: Set up Docker
         uses: docker/setup-buildx-action@v2
 

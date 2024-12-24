@@ -1,4 +1,4 @@
-package com.LocalNews.Komenti.DTO;
+package com.localnews.ankesa.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserDTO {
-    private int id;
+    public int id;
     private String firstName;
     private String lastName;
     private LocalDate dataLindjes;
@@ -18,6 +18,13 @@ public class UserDTO {
     private String vendbanimi;
     private String email;
     private String password;
-    private Role role;
+    public Role role;
 
+    public int getId() {
+        return id;
+    }
+
+    public Role getRole() {
+        return role;
+    }
 }

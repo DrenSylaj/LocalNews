@@ -1,19 +1,12 @@
-package com.LocalNews.Komenti.client;
+package com.localnews.ankesa.Client;
 
-import com.LocalNews.Komenti.DTO.UserDTO;
-import org.apache.catalina.User;
+import com.localnews.ankesa.DTO.UserDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
-
-import java.util.Optional;
 
 @FeignClient(name = "UserClient", url = "${application.config.users-url}")
 public interface UserClient {
-
-    @GetMapping("/{id}")
-    UserDTO findUserById(@PathVariable("id") Integer id);
 
     @GetMapping("/jwt")
     public UserDTO getUserByJwt(@RequestHeader("Authorization") String jwt);

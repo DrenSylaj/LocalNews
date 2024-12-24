@@ -15,13 +15,13 @@ import javax.xml.stream.events.Comment;
 public class Like {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     private Integer userId;
 
     @ManyToOne
-    @JoinColumn(name = "comment_id")
+    @JoinColumn(name = "comment_id", nullable = false)
     private Komenti comment;
 
     private boolean isLike;

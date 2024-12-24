@@ -1,8 +1,12 @@
 package com.LocalNews.Komenti.entity;
 
+import com.LocalNews.Komenti.DTO.UserDTO;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Fetch;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -14,6 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@JsonIgnoreProperties
 public class Komenti implements Serializable {
 
     private static final long serialVersionUID =1L;
@@ -21,10 +26,16 @@ public class Komenti implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
     private String teksti;
 
-    private Integer likes = 0;
-    private Integer dislikes = 0;
+    @OneToMany(mappedBy = "comment",cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
+    private List<Like> Like = new ArrayList<>();
+
+    @OneToMany(mappedBy = "comment",cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
+    private List<Dislike> dislikes = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "parent_id")
@@ -35,5 +46,18 @@ public class Komenti implements Serializable {
     private List<Komenti> replies = new ArrayList<>();
 
     private Integer lajmiId;
+
+    @Column(name = "creator_id")
+    private Integer creatorId;
+
+    @JsonProperty("likes")
+    public int getLikeCount() {
+        return Like != null ? Like.size() : 0;
+    }
+
+    @JsonProperty("dislikes")
+    public int getDislikeCount() {
+        return dislikes != null ? dislikes.size() : 0;
+    }
 }
 

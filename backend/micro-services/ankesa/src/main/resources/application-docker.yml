@@ -29,3 +29,6 @@ spring:
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
+application:
+  config:
+    users-url: http://users:8111/api/v1/user

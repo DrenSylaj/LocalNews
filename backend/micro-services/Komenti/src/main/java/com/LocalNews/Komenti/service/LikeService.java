@@ -23,19 +23,19 @@ public class LikeService {
 
     private final UserClient userClient;
 
-    public Like addLike(Integer userId, Integer commentId, boolean isLike) {
+    public Like addLike(Integer userId, Integer commentId) {
 
         if (isDisliked(userId, commentId)) {
             Komenti komenti = komentiRepository.findById(commentId).get();
             Dislike dislike = dislikeRepository.findByUserIdAndComment(userId, komenti).get();
 
             deleteDislike(dislike.getId());
-        }
+        } else if (isLiked(userId, commentId)) {
+            Komenti komenti = komentiRepository.findById(commentId).get();
+            Like like = likeRepository.findByUserIdAndComment(userId, komenti).get();
 
-
-        UserDTO user = userClient.findUserById(userId);
-        if (user == null) {
-            throw new IllegalArgumentException("Useri nuk ekziston!");
+            deleteLike(like.getId());
+            return null;
         }
 
         Komenti komenti = komentiRepository.findById(commentId).orElseThrow(
@@ -45,18 +45,23 @@ public class LikeService {
         Like like = new Like();
         like.setUserId(userId);
         like.setComment(komenti);
-        like.setIslike(isLike);
 
         return likeRepository.save(like);
     }
 
-    public Dislike addDislike(Integer userId, Integer commentId, boolean isLike) {
+    public Dislike addDislike(Integer userId, Integer commentId) {
 
         if (isLiked(userId, commentId)) {
             Komenti komenti = komentiRepository.findById(commentId).get();
             Like like = likeRepository.findByUserIdAndComment(userId, komenti).get();
 
             deleteLike(like.getId());
+        } else if (isDisliked(userId, commentId)) {
+            Komenti komenti = komentiRepository.findById(commentId).get();
+            Dislike dislike = dislikeRepository.findByUserIdAndComment(userId, komenti).get();
+
+            deleteDislike(dislike.getId());
+            return null;
         }
 
         UserDTO user = userClient.findUserById(userId);
@@ -71,7 +76,6 @@ public class LikeService {
         Dislike dislike = new Dislike();
         dislike.setUserId(userId);
         dislike.setComment(komenti);
-        dislike.setDisliked(isLike);
 
         return dislikeRepository.save(dislike);
     }
@@ -98,6 +102,7 @@ public class LikeService {
         return likeRepository.findByUserId(userId);
     }
 
+
     public boolean isLiked(Integer userId, Integer commentId) {
         Komenti komenti = komentiRepository.findById(commentId).orElseThrow(
                 ()-> new RuntimeException("Komenti nuk u gjete!")
@@ -110,7 +115,6 @@ public class LikeService {
         Komenti komenti = komentiRepository.findById(commentId).orElseThrow(
                 ()-> new RuntimeException("Komenti nuk u gjete!")
         );
-
         return dislikeRepository.findByUserIdAndComment(userId, komenti).isPresent();
     }
 

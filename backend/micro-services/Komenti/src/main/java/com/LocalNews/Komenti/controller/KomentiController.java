@@ -1,5 +1,8 @@
 package com.LocalNews.Komenti.controller;
 
+import com.LocalNews.Komenti.DTO.ReplyRequest;
+import com.LocalNews.Komenti.DTO.UserDTO;
+import com.LocalNews.Komenti.client.UserClient;
 import com.LocalNews.Komenti.entity.Dislike;
 import com.LocalNews.Komenti.entity.Komenti;
 import com.LocalNews.Komenti.entity.Like;
@@ -20,21 +23,49 @@ public class KomentiController {
 
     private final KomentiService service;
     private final LikeService likeService;
+    private final UserClient userClient;
 
     @PostMapping
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void create(
-            @RequestBody Komenti komenti
+            @RequestBody Komenti komenti,
+            @RequestHeader("Authorization") String token
             ) {
+
+        if (komenti.getLajmiId() == null)
+            throw new NullPointerException("LajmiId nuk munde te jete null!");
+
+        if (komenti.getTeksti().trim().isBlank())
+            throw new NullPointerException("Teksti nuk munde te jete bosh!");
+
+        UserDTO user = userClient.getUserByJwt(token);
+
+        komenti.setCreatorId(user.getId());
+
         service.createKomenti(komenti);
     }
-
     @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteComment(@PathVariable Integer id) {
-        service.deleteKomenti(id);
+    public String deleteKomenti(
+            @RequestHeader("Authorization") String token,
+            @PathVariable Integer id) {
+
+        UserDTO user = userClient.getUserByJwt(token);
+
+        return service.deleteKomenti(id, user);
     }
 
+    @PutMapping("/{id}")
+    public Komenti updateKomenti(
+            @RequestHeader("Authorization") String token,
+            @RequestBody ReplyRequest request,
+            @PathVariable Integer id) {
+
+        UserDTO user = userClient.getUserByJwt(token);
+
+        return service.updateKomenti(id, request.getTeksti() ,user);
+    }
+
+    // Kur shlyhet ni lajm i shlyn kejt komentet e atij lajmi.
     @DeleteMapping("/komentet/{id}")
     public void deleteComments(@PathVariable Integer id) {
         service.deleteKomentetELajmit(id);
@@ -45,10 +76,17 @@ public class KomentiController {
         return ResponseEntity.ok(service.findAllKomentet());
     }
 
+
+    // Replies API !!!!
     @PostMapping("/reply/{komenti_id}")
     @ResponseStatus(HttpStatus.CREATED)
-    public void shtoReply(@PathVariable Integer komenti_id, @RequestBody Komenti reply) {
-        service.shtoReply(komenti_id, reply);
+    public void shtoReply(
+            @RequestHeader("Authorization") String token,
+            @PathVariable Integer komenti_id,
+            @RequestBody ReplyRequest request) {
+
+        UserDTO user = userClient.getUserByJwt(token);
+        service.shtoReply(komenti_id, request.getTeksti(), user.getId());
     }
 
     @GetMapping("/replies/{parentId}")
@@ -61,33 +99,28 @@ public class KomentiController {
         return ResponseEntity.ok(service.findKomentiById(id));
     }
 
-    @GetMapping("/lajmi/{lajmi-id}")
-    public ResponseEntity<List<Komenti>> findAllKomentetByLajmi(
-            @PathVariable("lajmi-id") Integer lajmiId
-    ) {
-        return ResponseEntity.ok(service.findAllKomentetByLajmiId(lajmiId));
-    }
 
-
-
-    @PostMapping("/likes/{userId}/{commentId}/{isLike}")
+    // Like & Dislike API !!!
+    @PostMapping("/like/{commentId}")
     public ResponseEntity<Like> addLike(
-            @PathVariable("userId") Integer userId,
             @PathVariable("commentId") Integer commentId,
-            @PathVariable("isLike") boolean isLike
+            @RequestHeader("Authorization") String token
     ) {
-        Like like = likeService.addLike(userId, commentId, isLike);
+        UserDTO user = userClient.getUserByJwt(token);
+        Like like = likeService.addLike(user.getId(), commentId);
 
         return ResponseEntity.ok(like);
     }
 
-    @PostMapping("/dislikes/{userId}/{commentId}/{isLike}")
+    @PostMapping("/dislike/{commentId}")
     public ResponseEntity<Dislike> removeLike(
-            @PathVariable("userId") Integer userId,
             @PathVariable("commentId") Integer commentId,
-            @PathVariable("isLike") boolean isLike
+            @RequestHeader("Authorization") String token
     ) {
-        Dislike dislike = likeService.addDislike(userId, commentId, isLike);
+
+        UserDTO user = userClient.getUserByJwt(token);
+
+        Dislike dislike = likeService.addDislike(user.getId(), commentId);
 
         return ResponseEntity.ok(dislike);
     }
@@ -105,6 +138,36 @@ public class KomentiController {
     @GetMapping("/likes/{userId}")
     public ResponseEntity<List<Like>> getLikesByUserId(@PathVariable("userId") Integer userId) {
         return ResponseEntity.ok(likeService.getLikesByUserId(userId));
+    }
+
+    // Lajmi API !!
+    @GetMapping("/lajmi/{lajmi-id}")
+    public ResponseEntity<List<Komenti>> findAllKomentetByLajmi(
+            @PathVariable("lajmi-id") Integer lajmiId
+    ) {
+        return ResponseEntity.ok(service.findAllKomentetByLajmiId(lajmiId));
+    }
+
+
+    // Inifinite Scroll!!
+    @GetMapping("/scroll/{lajmiId}")
+    public ResponseEntity<List<Komenti>> getComments(
+            @PathVariable Integer lajmiId,
+            @RequestParam int page,
+            @RequestParam int size
+    ) {
+        List<Komenti> comments = service.getComments(lajmiId, page, size);
+        return ResponseEntity.ok(comments);
+    }
+
+    @GetMapping("/replies/scroll/{komentiId}")
+    public ResponseEntity<List<Komenti>> getReplies(
+            @PathVariable Integer komentiId,
+            @RequestParam int page,
+            @RequestParam int size
+    ) {
+        List<Komenti> comments = service.getReplies(komentiId, page, size);
+        return ResponseEntity.ok(comments);
     }
 
 }

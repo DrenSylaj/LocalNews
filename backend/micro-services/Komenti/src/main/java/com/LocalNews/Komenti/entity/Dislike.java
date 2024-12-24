@@ -18,7 +18,7 @@ public class Dislike {
         private Integer userId;
 
         @ManyToOne
-        @JoinColumn(name = "comment_id")
+        @JoinColumn(name = "comment_id", nullable = false)
         private Komenti comment;
 
         private boolean isDisliked;

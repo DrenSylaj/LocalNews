@@ -68,7 +68,6 @@ services:
     image: altin2004/komentet:latest
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db_komentet:5432/komentet
-      APPLICATION_CONFIG_USERS_URL: http://users:8111
       SPRING_PROFILES_ACTIVE: docker
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: dren123

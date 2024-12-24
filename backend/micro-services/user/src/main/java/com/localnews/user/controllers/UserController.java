@@ -2,9 +2,11 @@ package com.localnews.user.controllers;
 
 import com.localnews.user.Client.AnkesaClient;
 import com.localnews.user.DTO.AnkesaDTO;
+import com.localnews.user.DTO.RoleUpdateRequest;
 import com.localnews.user.config.JwtService;
 import com.localnews.user.entities.User;
 import com.localnews.user.services.UserService;
+import jakarta.ws.rs.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -41,10 +43,19 @@ public class UserController {
     }
 
     @GetMapping("/jwt")
-    public Optional<User> getUserByJwt(@RequestHeader("Authorization") String jwt) {
-        return jwtService.findUserByJwt(jwt);
+    public User getUserByJwt(@RequestHeader("Authorization") String jwt) {
+        return jwtService.findUserByJwt(jwt).orElseThrow(() -> new NotFoundException("User not found"));
     }
 
-
+    @PutMapping("/{id}")
+    public ResponseEntity<User> updateUserRole(
+            @PathVariable Integer id,
+            @RequestBody RoleUpdateRequest request
+    ) {
+        User user = service.findUserById(id).orElseThrow(() -> new NotFoundException("User not found"));
+        user.setRole(request.getRole());
+        service.saveUser(user);
+        return ResponseEntity.ok(user);
+    }
 
 }

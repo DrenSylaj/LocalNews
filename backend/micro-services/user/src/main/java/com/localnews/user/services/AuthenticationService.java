@@ -9,10 +9,12 @@ import com.localnews.user.request.RegisterRequest;
 import com.localnews.user.response.AuthenticationResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +29,7 @@ public class AuthenticationService {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
     private final UserRepository userRepository;
+    private final CostumerUserDetailsService costumerUserDetails;
 
 
     public AuthenticationResponse register(RegisterRequest request) {
@@ -39,7 +42,7 @@ public class AuthenticationService {
                 .lastName(request.getLastName())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .role(Role.USER)
+                .role(Role.valueOf("ROLE_USER"))
                 .build();
         repository.save(user);
 
@@ -55,13 +58,12 @@ public class AuthenticationService {
     }
 
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
-        Authentication authentication = new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword());
+        String username = request.getEmail();
+        String password = request.getPassword();
+
+        Authentication authentication = authenticate(username, password);
         Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
         String role = authorities.isEmpty() ? null : authorities.iterator().next().getAuthority();
-
-//        authenticationManager.authenticate(
-//                authentication
-//        );
 
         var jwtToken = jwtService.generateToken(authentication);
 
@@ -69,5 +71,19 @@ public class AuthenticationService {
                 .token(jwtToken)
                 .role(role)
                 .build();
+    }
+
+    private Authentication authenticate(String username, String password){
+        UserDetails userDetails = costumerUserDetails.loadUserByUsername(username);
+
+        if(userDetails == null){
+            throw new BadCredentialsException("Invalid username");
+        }
+
+        if(!passwordEncoder.matches(password, userDetails.getPassword())){
+            throw new BadCredentialsException("Invalid password...");
+        }
+
+        return new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
     }
 }

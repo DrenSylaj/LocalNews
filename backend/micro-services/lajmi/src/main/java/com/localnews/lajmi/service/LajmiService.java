@@ -55,6 +55,10 @@ public class LajmiService {
         return lajmiRepository.findById(id).get();
     }
 
+    public List<Lajmi> findByAutoriId(Integer autoriId){
+        return lajmiRepository.findByAutoriId(autoriId);
+    }
+
     @CacheEvict(value = "lajme", key = "#id")
     public String deleteLajmi(int id) {
         Lajmi lajmi = lajmiRepository.findById(id)

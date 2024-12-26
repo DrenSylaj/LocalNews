@@ -1,6 +1,8 @@
 package com.localnews.lajmi.controller;
 
+import com.localnews.lajmi.client.UserClient;
 import com.localnews.lajmi.entity.Lajmi;
+import com.localnews.lajmi.response.AutoriDto;
 import com.localnews.lajmi.response.FullLajmiResponse;
 import com.localnews.lajmi.service.LajmiService;
 import lombok.RequiredArgsConstructor;
@@ -20,15 +22,6 @@ public class LajmiController {
     private final Logger logger = LoggerFactory.getLogger(LajmiController.class);
     private final LajmiService lajmiService;
 
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public void save(
-            @RequestBody Lajmi lajmi
-            ){
-        logger.info("Lajmi "+lajmi+" has been saved");
-        lajmiService.saveLajmi(lajmi);
-    }
-
     @GetMapping
     public ResponseEntity<List<Lajmi>> findAllLajmet(){
         return ResponseEntity.ok(lajmiService.findAllLajmet());
@@ -47,6 +40,11 @@ public class LajmiController {
     ){
         logger.info("Comments of lajmi with id: "+lajmiId+" have been retrieved");
         return ResponseEntity.ok(lajmiService.findLajmetWithComments(lajmiId));
+    }
+
+    @GetMapping("/{autoriId}")
+    public List<Lajmi> getLajmetByAutoriId(@PathVariable("autori-id") Integer autoriId){
+        return lajmiService.findByAutoriId(autoriId);
     }
 
     @DeleteMapping("/{id}")

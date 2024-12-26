@@ -4,11 +4,19 @@ import com.localnews.user.Client.AnkesaClient;
 import com.localnews.user.DTO.AnkesaDTO;
 import com.localnews.user.DTO.RoleUpdateRequest;
 import com.localnews.user.config.JwtService;
+import com.localnews.user.entities.Autori;
+import com.localnews.user.entities.Role;
 import com.localnews.user.entities.User;
+import com.localnews.user.repositories.AutoriRepository;
+import com.localnews.user.services.AutoriService;
 import com.localnews.user.services.UserService;
 import jakarta.ws.rs.NotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,9 +29,15 @@ public class UserController {
     private final UserService service;
     private final AnkesaClient  ankesaClient;
     private final JwtService jwtService;
+    private final AutoriService autoriService;
+    private final AutoriRepository autoriRepository;
+
+    private final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @PostMapping
     public void saveUser(@RequestBody User user){
+        logger.info("User: "+user+" has been saved");
+
         service.saveUser(user);
     }
 
@@ -57,5 +71,24 @@ public class UserController {
         service.saveUser(user);
         return ResponseEntity.ok(user);
     }
+    @PutMapping("/autor/{userId}")
+    public ResponseEntity<String> updateRole(@PathVariable("userId") Integer userId, @RequestBody Autori autori){
+        User user = findUserById(userId);
+        if (user == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
+        }
+
+        user.setRole(Role.valueOf("ROLE_AUTHOR"));
+
+        autori.setUserId(user.getId());
+
+        if(autoriService.findByUserId(userId) == null){
+            autoriRepository.save(autori);
+        }
+        return ResponseEntity.ok("Role updated and Autori saved (if needed)");
+    }
+
+
+
 
 }

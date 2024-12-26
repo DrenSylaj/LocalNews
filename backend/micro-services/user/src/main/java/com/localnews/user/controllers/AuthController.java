@@ -1,5 +1,6 @@
 package com.localnews.user.controllers;
 
+import com.localnews.user.entities.User;
 import com.localnews.user.request.AuthenticationRequest;
 import com.localnews.user.request.RegisterRequest;
 import com.localnews.user.response.AuthenticationResponse;

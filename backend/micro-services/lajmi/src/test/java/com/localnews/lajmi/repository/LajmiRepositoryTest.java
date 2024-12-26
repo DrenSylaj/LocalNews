@@ -44,6 +44,7 @@ public class LajmiRepositoryTest {
         //Assert
         Assertions.assertThat(savedLajmi).isNotNull();
         Assertions.assertThat(savedLajmi.getId()).isGreaterThan(0);
+        Assertions.assertThat(savedLajmi.getKategoria()).isEqualTo(savedKategoria);
     }
 
     @Test

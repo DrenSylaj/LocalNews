@@ -48,6 +48,11 @@ public class JwtService {
         Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
         String roles = populateAuthorities(authorities);
 
+        System.out.println("Authentication authorities: " + authentication.getAuthorities());
+
+
+        System.out.println("Roles: "+roles);
+
         return Jwts
                 .builder()
                 .setIssuedAt(new Date(System.currentTimeMillis()))

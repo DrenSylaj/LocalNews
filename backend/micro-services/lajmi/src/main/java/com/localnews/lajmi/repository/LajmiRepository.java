@@ -9,4 +9,5 @@ import java.util.List;
 
 public interface LajmiRepository extends JpaRepository<Lajmi, Integer> {
     List<Lajmi> findByKategoria(Kategoria kategoria);
+    List<Lajmi> findByAutoriId(Integer autoriId);
 }

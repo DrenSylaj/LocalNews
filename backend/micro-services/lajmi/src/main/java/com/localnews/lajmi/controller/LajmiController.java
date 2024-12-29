@@ -45,6 +45,16 @@ public class LajmiController {
     @GetMapping("/{autoriId}")
     public List<Lajmi> getLajmetByAutoriId(@PathVariable("autori-id") Integer autoriId){
         return lajmiService.findByAutoriId(autoriId);
+<<<<<<< Updated upstream
+=======
+    }
+
+    @DeleteMapping("/{id}")
+    public String deleteLajmi(@PathVariable int id) {
+        logger.info("Lajmi with id: "+id+" has been deleted");
+        return lajmiService.deleteLajmi(id);
+
+>>>>>>> Stashed changes
     }
 
 

@@ -7782,6 +7782,7 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
 	at java.base/java.lang.Thread.run(Thread.java:1589)
 2024-12-18 19:37:11 INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+<<<<<<< Updated upstream
 2024-12-20 13:22:04 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.localnews.lajmi.controller.LajmiControllerTest]: LajmiControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
 2024-12-20 13:22:05 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.localnews.lajmi.LajmiApplication for test class com.localnews.lajmi.controller.LajmiControllerTest
 2024-12-20 13:22:06 WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
@@ -8217,12 +8218,41 @@ You may wish to exclude one of them to ensure predictable runtime behavior
 2024-12-20 13:22:18 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
 2024-12-20 13:22:18 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@4e5dd9b']
+=======
+2024-12-19 13:22:13 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.localnews.lajmi.repository.LajmiRepositoryTest]: LajmiRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-19 13:22:13 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.localnews.lajmi.LajmiApplication for test class com.localnews.lajmi.repository.LajmiRepositoryTest
+2024-12-19 13:22:15 WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/sylaj/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/sylaj/.m2/repository/org/json/json/20240303/json-20240303.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-12-19 13:22:15 INFO  c.l.l.repository.LajmiRepositoryTest - Starting LajmiRepositoryTest using Java 19.0.1 with PID 7256 (started by sylaj in C:\dren\LocalNews\backend\micro-services\lajmi)
+2024-12-19 13:22:15 INFO  c.l.l.repository.LajmiRepositoryTest - The following 1 profile is active: "native"
+2024-12-19 13:22:16 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-19 13:22:16 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-19 13:22:16 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 237 ms. Found 4 JPA repository interfaces.
+2024-12-19 13:22:16 INFO  o.s.b.t.a.j.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2024-12-19 13:22:17 INFO  o.s.j.d.e.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:e46b1a73-718a-48cc-8c68-35b139591680;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-12-19 13:22:17 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-19 13:22:17 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-19 13:22:17 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-19 13:22:17 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-19 13:22:18 WARN  org.hibernate.dialect.Dialect - HHH000511: The 2.2.224 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-12-19 13:22:18 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-19 13:22:18 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@6f1d799']
+>>>>>>> Stashed changes
 	Database driver: undefined/unknown
 	Database version: 2.2.224
 	Autocommit mode: undefined/unknown
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
+<<<<<<< Updated upstream
 2024-12-20 13:22:18 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 2024-12-20 13:22:18 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
 2024-12-20 13:22:18 INFO  c.l.l.repository.LajmiRepositoryTest - Started LajmiRepositoryTest in 0.733 seconds (process running for 15.252)
@@ -9012,12 +9042,50 @@ You may wish to exclude one of them to ensure predictable runtime behavior
 2024-12-20 13:39:20 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
 2024-12-20 13:39:20 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@52fe7c0f']
+=======
+2024-12-19 13:22:19 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-19 13:22:19 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 13:22:19 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-19 13:22:20 INFO  c.l.l.repository.LajmiRepositoryTest - Started LajmiRepositoryTest in 6.663 seconds (process running for 8.689)
+2024-12-19 13:22:21 WARN  o.h.a.i.UnresolvedEntityInsertActions - HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([com.localnews.lajmi.entity.Kategoria#<null>])
+	Dependent entities: ([[com.localnews.lajmi.entity.Lajmi#1]])
+	Non-nullable association(s): ([com.localnews.lajmi.entity.Lajmi.kategoria])
+2024-12-19 13:22:21 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 13:23:15 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.localnews.lajmi.repository.LajmiRepositoryTest]: LajmiRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-19 13:23:16 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.localnews.lajmi.LajmiApplication for test class com.localnews.lajmi.repository.LajmiRepositoryTest
+2024-12-19 13:23:18 WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/sylaj/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/sylaj/.m2/repository/org/json/json/20240303/json-20240303.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-12-19 13:23:18 INFO  c.l.l.repository.LajmiRepositoryTest - Starting LajmiRepositoryTest using Java 19.0.1 with PID 15076 (started by sylaj in C:\dren\LocalNews\backend\micro-services\lajmi)
+2024-12-19 13:23:18 INFO  c.l.l.repository.LajmiRepositoryTest - The following 1 profile is active: "native"
+2024-12-19 13:23:18 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-19 13:23:18 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-19 13:23:18 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 159 ms. Found 4 JPA repository interfaces.
+2024-12-19 13:23:18 INFO  o.s.b.t.a.j.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2024-12-19 13:23:19 INFO  o.s.j.d.e.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:5490b215-1571-483a-b9de-b88ff1347646;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-12-19 13:23:19 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-19 13:23:19 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-19 13:23:19 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-19 13:23:19 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-19 13:23:19 WARN  org.hibernate.dialect.Dialect - HHH000511: The 2.2.224 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-12-19 13:23:19 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-19 13:23:19 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@a120b9']
+>>>>>>> Stashed changes
 	Database driver: undefined/unknown
 	Database version: 2.2.224
 	Autocommit mode: undefined/unknown
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
+<<<<<<< Updated upstream
 2024-12-20 13:39:20 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 2024-12-20 13:39:20 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
 2024-12-20 13:39:21 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
@@ -9591,14 +9659,565 @@ You may wish to exclude one of them to ensure predictable runtime behavior
 2024-12-20 13:40:23 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
 2024-12-20 13:40:23 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@2ef86335']
+=======
+2024-12-19 13:23:20 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-19 13:23:20 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 13:23:21 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-19 13:23:22 INFO  c.l.l.repository.LajmiRepositoryTest - Started LajmiRepositoryTest in 5.765 seconds (process running for 7.639)
+2024-12-19 13:23:22 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 13:45:38 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.localnews.lajmi.repository.LajmiRepositoryTest]: LajmiRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-19 13:45:38 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.localnews.lajmi.LajmiApplication for test class com.localnews.lajmi.repository.LajmiRepositoryTest
+2024-12-19 13:45:40 WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/sylaj/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/sylaj/.m2/repository/org/json/json/20240303/json-20240303.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-12-19 13:45:40 INFO  c.l.l.repository.LajmiRepositoryTest - Starting LajmiRepositoryTest using Java 19.0.1 with PID 14048 (started by sylaj in C:\dren\LocalNews\backend\micro-services\lajmi)
+2024-12-19 13:45:40 INFO  c.l.l.repository.LajmiRepositoryTest - The following 1 profile is active: "native"
+2024-12-19 13:45:41 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-19 13:45:41 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-19 13:45:41 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 203 ms. Found 4 JPA repository interfaces.
+2024-12-19 13:45:41 INFO  o.s.b.t.a.j.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2024-12-19 13:45:41 INFO  o.s.j.d.e.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:b0e372d9-79a2-454c-a07e-421da28e4191;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-12-19 13:45:42 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-19 13:45:42 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-19 13:45:42 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-19 13:45:42 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-19 13:45:42 WARN  org.hibernate.dialect.Dialect - HHH000511: The 2.2.224 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-12-19 13:45:42 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-19 13:45:42 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@17136390']
+>>>>>>> Stashed changes
 	Database driver: undefined/unknown
 	Database version: 2.2.224
 	Autocommit mode: undefined/unknown
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
+<<<<<<< Updated upstream
 2024-12-20 13:40:23 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 2024-12-20 13:40:23 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
 2024-12-20 13:40:24 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
 2024-12-20 13:40:25 INFO  c.l.l.repository.LajmiRepositoryTest - Started LajmiRepositoryTest in 2.62 seconds (process running for 15.386)
 2024-12-20 13:40:25 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+=======
+2024-12-19 13:45:44 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-19 13:45:44 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 13:45:44 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-19 13:45:45 INFO  c.l.l.repository.LajmiRepositoryTest - Started LajmiRepositoryTest in 6.459 seconds (process running for 8.545)
+2024-12-19 13:45:46 WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 23506, SQLState: 23506
+2024-12-19 13:45:46 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Referential integrity constraint violation: "FKSNOFDG8TPO3LPBQXOVKL99ESM: PUBLIC.LAJMI FOREIGN KEY(KATEGORIA_ID) REFERENCES PUBLIC.KATEGORIA(ID) (2)"; SQL statement:
+insert into lajmi (autori_id,kategoria_id,koha_publikimit,teksti,id) values (?,?,?,?,?) [23506-224]
+2024-12-19 13:45:46 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 13:47:09 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.localnews.lajmi.repository.LajmiRepositoryTest]: LajmiRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-19 13:47:10 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.localnews.lajmi.LajmiApplication for test class com.localnews.lajmi.repository.LajmiRepositoryTest
+2024-12-19 13:47:11 WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/sylaj/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/sylaj/.m2/repository/org/json/json/20240303/json-20240303.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-12-19 13:47:11 INFO  c.l.l.repository.LajmiRepositoryTest - Starting LajmiRepositoryTest using Java 19.0.1 with PID 22740 (started by sylaj in C:\dren\LocalNews\backend\micro-services\lajmi)
+2024-12-19 13:47:11 INFO  c.l.l.repository.LajmiRepositoryTest - The following 1 profile is active: "native"
+2024-12-19 13:47:12 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-19 13:47:12 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-19 13:47:12 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 187 ms. Found 4 JPA repository interfaces.
+2024-12-19 13:47:12 INFO  o.s.b.t.a.j.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2024-12-19 13:47:12 INFO  o.s.j.d.e.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:fa48f5e4-1879-4800-ac64-4383b6a86029;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-12-19 13:47:13 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-19 13:47:13 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-19 13:47:13 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-19 13:47:13 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-19 13:47:13 WARN  org.hibernate.dialect.Dialect - HHH000511: The 2.2.224 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-12-19 13:47:13 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-19 13:47:13 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@17136390']
+	Database driver: undefined/unknown
+	Database version: 2.2.224
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-19 13:47:14 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-19 13:47:14 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 13:47:15 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-19 13:47:15 INFO  c.l.l.repository.LajmiRepositoryTest - Started LajmiRepositoryTest in 5.39 seconds (process running for 6.985)
+2024-12-19 13:47:16 WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 23506, SQLState: 23506
+2024-12-19 13:47:16 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Referential integrity constraint violation: "FKSNOFDG8TPO3LPBQXOVKL99ESM: PUBLIC.LAJMI FOREIGN KEY(KATEGORIA_ID) REFERENCES PUBLIC.KATEGORIA(ID) (2)"; SQL statement:
+insert into lajmi (autori_id,kategoria_id,koha_publikimit,teksti,id) values (?,?,?,?,?) [23506-224]
+2024-12-19 13:47:16 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 13:47:50 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.localnews.lajmi.repository.LajmiRepositoryTest]: LajmiRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-19 13:47:50 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.localnews.lajmi.LajmiApplication for test class com.localnews.lajmi.repository.LajmiRepositoryTest
+2024-12-19 13:47:52 WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/sylaj/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/sylaj/.m2/repository/org/json/json/20240303/json-20240303.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-12-19 13:47:52 INFO  c.l.l.repository.LajmiRepositoryTest - Starting LajmiRepositoryTest using Java 19.0.1 with PID 15364 (started by sylaj in C:\dren\LocalNews\backend\micro-services\lajmi)
+2024-12-19 13:47:52 INFO  c.l.l.repository.LajmiRepositoryTest - The following 1 profile is active: "native"
+2024-12-19 13:47:53 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-19 13:47:53 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-19 13:47:53 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 204 ms. Found 4 JPA repository interfaces.
+2024-12-19 13:47:53 INFO  o.s.b.t.a.j.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2024-12-19 13:47:53 INFO  o.s.j.d.e.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:dead22c3-beef-40d2-83f0-0079a07c0fca;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-12-19 13:47:54 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-19 13:47:54 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-19 13:47:54 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-19 13:47:54 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-19 13:47:54 WARN  org.hibernate.dialect.Dialect - HHH000511: The 2.2.224 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-12-19 13:47:54 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-19 13:47:54 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@7aa3857b']
+	Database driver: undefined/unknown
+	Database version: 2.2.224
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-19 13:47:55 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-19 13:47:55 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 13:47:56 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-19 13:47:56 INFO  c.l.l.repository.LajmiRepositoryTest - Started LajmiRepositoryTest in 5.888 seconds (process running for 8.112)
+2024-12-19 13:48:34 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.localnews.lajmi.repository.LajmiRepositoryTest]: LajmiRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-19 13:48:34 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.localnews.lajmi.LajmiApplication for test class com.localnews.lajmi.repository.LajmiRepositoryTest
+2024-12-19 13:48:36 WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/sylaj/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/sylaj/.m2/repository/org/json/json/20240303/json-20240303.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-12-19 13:48:36 INFO  c.l.l.repository.LajmiRepositoryTest - Starting LajmiRepositoryTest using Java 19.0.1 with PID 1856 (started by sylaj in C:\dren\LocalNews\backend\micro-services\lajmi)
+2024-12-19 13:48:36 INFO  c.l.l.repository.LajmiRepositoryTest - The following 1 profile is active: "native"
+2024-12-19 13:48:36 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-19 13:48:36 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-19 13:48:37 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 171 ms. Found 4 JPA repository interfaces.
+2024-12-19 13:48:37 INFO  o.s.b.t.a.j.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2024-12-19 13:48:37 INFO  o.s.j.d.e.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:f32dd583-32e7-4246-a794-a1a894014c82;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-12-19 13:48:37 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-19 13:48:37 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-19 13:48:37 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-19 13:48:38 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-19 13:48:38 WARN  org.hibernate.dialect.Dialect - HHH000511: The 2.2.224 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-12-19 13:48:38 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-19 13:48:38 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@17136390']
+	Database driver: undefined/unknown
+	Database version: 2.2.224
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-19 13:48:39 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-19 13:48:39 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 13:48:39 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-19 13:48:40 INFO  c.l.l.repository.LajmiRepositoryTest - Started LajmiRepositoryTest in 5.874 seconds (process running for 7.541)
+2024-12-19 13:48:41 WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 23506, SQLState: 23506
+2024-12-19 13:48:41 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Referential integrity constraint violation: "FKSNOFDG8TPO3LPBQXOVKL99ESM: PUBLIC.LAJMI FOREIGN KEY(KATEGORIA_ID) REFERENCES PUBLIC.KATEGORIA(ID) (2)"; SQL statement:
+insert into lajmi (autori_id,kategoria_id,koha_publikimit,teksti,id) values (?,?,?,?,?) [23506-224]
+2024-12-19 13:48:41 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 13:49:34 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.localnews.lajmi.repository.LajmiRepositoryTest]: LajmiRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-19 13:49:35 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.localnews.lajmi.LajmiApplication for test class com.localnews.lajmi.repository.LajmiRepositoryTest
+2024-12-19 13:49:37 WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/sylaj/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/sylaj/.m2/repository/org/json/json/20240303/json-20240303.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-12-19 13:49:37 INFO  c.l.l.repository.LajmiRepositoryTest - Starting LajmiRepositoryTest using Java 19.0.1 with PID 29720 (started by sylaj in C:\dren\LocalNews\backend\micro-services\lajmi)
+2024-12-19 13:49:37 INFO  c.l.l.repository.LajmiRepositoryTest - The following 1 profile is active: "native"
+2024-12-19 13:49:37 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-19 13:49:37 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-19 13:49:37 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 219 ms. Found 4 JPA repository interfaces.
+2024-12-19 13:49:37 INFO  o.s.b.t.a.j.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2024-12-19 13:49:38 INFO  o.s.j.d.e.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:5d719f8a-ba93-4934-9c68-13ff10e99ad3;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-12-19 13:49:38 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-19 13:49:38 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-19 13:49:38 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-19 13:49:39 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-19 13:49:39 WARN  org.hibernate.dialect.Dialect - HHH000511: The 2.2.224 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-12-19 13:49:39 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-19 13:49:39 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@ca2cd5e']
+	Database driver: undefined/unknown
+	Database version: 2.2.224
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-19 13:49:40 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-19 13:49:40 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 13:49:40 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-19 13:49:41 INFO  c.l.l.repository.LajmiRepositoryTest - Started LajmiRepositoryTest in 6.055 seconds (process running for 7.777)
+2024-12-19 13:49:42 WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 23506, SQLState: 23506
+2024-12-19 13:49:42 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Referential integrity constraint violation: "FKSNOFDG8TPO3LPBQXOVKL99ESM: PUBLIC.LAJMI FOREIGN KEY(KATEGORIA_ID) REFERENCES PUBLIC.KATEGORIA(ID) (1)"; SQL statement:
+insert into lajmi (autori_id,kategoria_id,koha_publikimit,teksti,id) values (?,?,?,?,?) [23506-224]
+2024-12-19 13:49:42 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 13:50:23 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 13:54:38 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.localnews.lajmi.repository.LajmiRepositoryTest]: LajmiRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-19 13:54:38 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.localnews.lajmi.LajmiApplication for test class com.localnews.lajmi.repository.LajmiRepositoryTest
+2024-12-19 13:54:40 WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/sylaj/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/sylaj/.m2/repository/org/json/json/20240303/json-20240303.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-12-19 13:54:40 INFO  c.l.l.repository.LajmiRepositoryTest - Starting LajmiRepositoryTest using Java 19.0.1 with PID 22716 (started by sylaj in C:\dren\LocalNews\backend\micro-services\lajmi)
+2024-12-19 13:54:40 INFO  c.l.l.repository.LajmiRepositoryTest - The following 1 profile is active: "native"
+2024-12-19 13:54:41 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-19 13:54:41 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-19 13:54:41 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 168 ms. Found 4 JPA repository interfaces.
+2024-12-19 13:54:41 INFO  o.s.b.t.a.j.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2024-12-19 13:54:41 INFO  o.s.j.d.e.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:cca8d922-55ab-42e0-be99-99b9bd07e86b;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-12-19 13:54:42 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-19 13:54:42 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-19 13:54:42 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-19 13:54:42 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-19 13:54:42 WARN  org.hibernate.dialect.Dialect - HHH000511: The 2.2.224 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-12-19 13:54:42 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-19 13:54:42 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@17136390']
+	Database driver: undefined/unknown
+	Database version: 2.2.224
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-19 13:54:43 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-19 13:54:43 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 13:54:43 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-19 13:54:44 INFO  c.l.l.repository.LajmiRepositoryTest - Started LajmiRepositoryTest in 5.339 seconds (process running for 6.904)
+2024-12-19 13:54:45 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 14:08:12 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.localnews.lajmi.repository.LajmiRepositoryTest]: LajmiRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-19 14:08:13 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.localnews.lajmi.LajmiApplication for test class com.localnews.lajmi.repository.LajmiRepositoryTest
+2024-12-19 14:08:15 WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/sylaj/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/sylaj/.m2/repository/org/json/json/20240303/json-20240303.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-12-19 14:08:15 INFO  c.l.l.repository.LajmiRepositoryTest - Starting LajmiRepositoryTest using Java 19.0.1 with PID 23468 (started by sylaj in C:\dren\LocalNews\backend\micro-services\lajmi)
+2024-12-19 14:08:15 INFO  c.l.l.repository.LajmiRepositoryTest - The following 1 profile is active: "native"
+2024-12-19 14:08:15 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-19 14:08:15 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-19 14:08:15 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 206 ms. Found 4 JPA repository interfaces.
+2024-12-19 14:08:15 INFO  o.s.b.t.a.j.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2024-12-19 14:08:16 INFO  o.s.j.d.e.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:be741a30-583c-4a5c-b912-80b20cd3047b;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-12-19 14:08:16 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-19 14:08:16 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-19 14:08:16 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-19 14:08:17 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-19 14:08:17 WARN  org.hibernate.dialect.Dialect - HHH000511: The 2.2.224 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-12-19 14:08:17 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-19 14:08:17 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@21a9f95b']
+	Database driver: undefined/unknown
+	Database version: 2.2.224
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-19 14:08:18 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-19 14:08:18 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 14:08:18 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-19 14:08:19 INFO  c.l.l.repository.LajmiRepositoryTest - Started LajmiRepositoryTest in 6.039 seconds (process running for 7.903)
+2024-12-19 14:08:20 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 14:08:45 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.localnews.lajmi.repository.LajmiRepositoryTest]: LajmiRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-19 14:08:45 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.localnews.lajmi.LajmiApplication for test class com.localnews.lajmi.repository.LajmiRepositoryTest
+2024-12-19 14:08:47 WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/sylaj/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/sylaj/.m2/repository/org/json/json/20240303/json-20240303.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-12-19 14:08:47 INFO  c.l.l.repository.LajmiRepositoryTest - Starting LajmiRepositoryTest using Java 19.0.1 with PID 20296 (started by sylaj in C:\dren\LocalNews\backend\micro-services\lajmi)
+2024-12-19 14:08:47 INFO  c.l.l.repository.LajmiRepositoryTest - The following 1 profile is active: "native"
+2024-12-19 14:08:48 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-19 14:08:48 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-19 14:08:48 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 165 ms. Found 4 JPA repository interfaces.
+2024-12-19 14:08:48 INFO  o.s.b.t.a.j.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2024-12-19 14:08:48 INFO  o.s.j.d.e.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:339198bb-bc9a-49df-a81c-f296f1fa6865;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-12-19 14:08:48 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-19 14:08:49 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-19 14:08:49 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-19 14:08:49 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-19 14:08:49 WARN  org.hibernate.dialect.Dialect - HHH000511: The 2.2.224 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-12-19 14:08:49 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-19 14:08:49 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@333e5fb6']
+	Database driver: undefined/unknown
+	Database version: 2.2.224
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-19 14:08:50 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-19 14:08:50 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 14:08:51 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-19 14:08:51 INFO  c.l.l.repository.LajmiRepositoryTest - Started LajmiRepositoryTest in 5.8 seconds (process running for 7.695)
+2024-12-19 14:08:52 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 14:09:37 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.localnews.lajmi.repository.LajmiRepositoryTest]: LajmiRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-19 14:09:37 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.localnews.lajmi.LajmiApplication for test class com.localnews.lajmi.repository.LajmiRepositoryTest
+2024-12-19 14:09:39 WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/sylaj/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/sylaj/.m2/repository/org/json/json/20240303/json-20240303.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-12-19 14:09:39 INFO  c.l.l.repository.LajmiRepositoryTest - Starting LajmiRepositoryTest using Java 19.0.1 with PID 25912 (started by sylaj in C:\dren\LocalNews\backend\micro-services\lajmi)
+2024-12-19 14:09:39 INFO  c.l.l.repository.LajmiRepositoryTest - The following 1 profile is active: "native"
+2024-12-19 14:09:39 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-19 14:09:39 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-19 14:09:39 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 165 ms. Found 4 JPA repository interfaces.
+2024-12-19 14:09:39 INFO  o.s.b.t.a.j.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2024-12-19 14:09:40 INFO  o.s.j.d.e.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:fb972e34-36bb-4b55-bdec-239e1654e113;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-12-19 14:09:40 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-19 14:09:40 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-19 14:09:40 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-19 14:09:40 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-19 14:09:40 WARN  org.hibernate.dialect.Dialect - HHH000511: The 2.2.224 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-12-19 14:09:40 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-19 14:09:40 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@69069866']
+	Database driver: undefined/unknown
+	Database version: 2.2.224
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-19 14:09:41 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-19 14:09:41 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 14:09:42 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-19 14:09:42 INFO  c.l.l.repository.LajmiRepositoryTest - Started LajmiRepositoryTest in 5.306 seconds (process running for 6.84)
+2024-12-19 14:09:43 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 14:11:34 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.localnews.lajmi.repository.LajmiRepositoryTest]: LajmiRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-19 14:11:34 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.localnews.lajmi.LajmiApplication for test class com.localnews.lajmi.repository.LajmiRepositoryTest
+2024-12-19 14:11:36 WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/sylaj/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/sylaj/.m2/repository/org/json/json/20240303/json-20240303.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-12-19 14:11:36 INFO  c.l.l.repository.LajmiRepositoryTest - Starting LajmiRepositoryTest using Java 19.0.1 with PID 32760 (started by sylaj in C:\dren\LocalNews\backend\micro-services\lajmi)
+2024-12-19 14:11:36 INFO  c.l.l.repository.LajmiRepositoryTest - The following 1 profile is active: "native"
+2024-12-19 14:11:36 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-19 14:11:36 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-19 14:11:37 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 175 ms. Found 4 JPA repository interfaces.
+2024-12-19 14:11:37 INFO  o.s.b.t.a.j.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2024-12-19 14:11:37 INFO  o.s.j.d.e.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:a4e9dc7d-6898-4db7-a830-3760ba39c9c2;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-12-19 14:11:37 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-19 14:11:37 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-19 14:11:37 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-19 14:11:38 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-19 14:11:38 WARN  org.hibernate.dialect.Dialect - HHH000511: The 2.2.224 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-12-19 14:11:38 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-19 14:11:38 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@69069866']
+	Database driver: undefined/unknown
+	Database version: 2.2.224
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-19 14:11:39 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-19 14:11:39 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 14:11:39 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-19 14:11:40 INFO  c.l.l.repository.LajmiRepositoryTest - Started LajmiRepositoryTest in 5.334 seconds (process running for 6.85)
+2024-12-19 14:11:40 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 14:21:30 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.localnews.lajmi.repository.LajmiRepositoryTest]: LajmiRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-19 14:21:30 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.localnews.lajmi.LajmiApplication for test class com.localnews.lajmi.repository.LajmiRepositoryTest
+2024-12-19 14:21:32 WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/sylaj/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/sylaj/.m2/repository/org/json/json/20240303/json-20240303.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-12-19 14:21:32 INFO  c.l.l.repository.LajmiRepositoryTest - Starting LajmiRepositoryTest using Java 19.0.1 with PID 32876 (started by sylaj in C:\dren\LocalNews\backend\micro-services\lajmi)
+2024-12-19 14:21:32 INFO  c.l.l.repository.LajmiRepositoryTest - The following 1 profile is active: "native"
+2024-12-19 14:21:32 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-19 14:21:32 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-19 14:21:32 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 198 ms. Found 4 JPA repository interfaces.
+2024-12-19 14:21:32 INFO  o.s.b.t.a.j.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2024-12-19 14:21:33 INFO  o.s.j.d.e.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:4127e6f3-d6c8-439e-8eb4-81b64ca9bb2b;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-12-19 14:21:33 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-19 14:21:33 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-19 14:21:33 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-19 14:21:34 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-19 14:21:34 WARN  org.hibernate.dialect.Dialect - HHH000511: The 2.2.224 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-12-19 14:21:34 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-19 14:21:34 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@a120b9']
+	Database driver: undefined/unknown
+	Database version: 2.2.224
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-19 14:21:35 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-19 14:21:35 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 14:21:35 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-19 14:21:36 INFO  c.l.l.repository.LajmiRepositoryTest - Started LajmiRepositoryTest in 5.918 seconds (process running for 7.682)
+2024-12-19 14:21:37 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 14:26:03 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.localnews.lajmi.repository.LajmiRepositoryTest]: LajmiRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-19 14:26:03 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.localnews.lajmi.LajmiApplication for test class com.localnews.lajmi.repository.LajmiRepositoryTest
+2024-12-19 14:26:05 WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/sylaj/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/sylaj/.m2/repository/org/json/json/20240303/json-20240303.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-12-19 14:26:05 INFO  c.l.l.repository.LajmiRepositoryTest - Starting LajmiRepositoryTest using Java 19.0.1 with PID 13112 (started by sylaj in C:\dren\LocalNews\backend\micro-services\lajmi)
+2024-12-19 14:26:05 INFO  c.l.l.repository.LajmiRepositoryTest - The following 1 profile is active: "native"
+2024-12-19 14:26:05 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-19 14:26:05 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-19 14:26:05 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 172 ms. Found 4 JPA repository interfaces.
+2024-12-19 14:26:05 INFO  o.s.b.t.a.j.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2024-12-19 14:26:06 INFO  o.s.j.d.e.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:c6e3c86d-3acf-4725-9c60-8865950e75f8;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-12-19 14:26:06 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-19 14:26:06 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-19 14:26:06 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-19 14:26:06 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-19 14:26:07 WARN  org.hibernate.dialect.Dialect - HHH000511: The 2.2.224 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-12-19 14:26:07 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-19 14:26:07 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@a120b9']
+	Database driver: undefined/unknown
+	Database version: 2.2.224
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-19 14:26:08 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-19 14:26:08 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 14:26:08 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-19 14:26:09 INFO  c.l.l.repository.LajmiRepositoryTest - Started LajmiRepositoryTest in 5.499 seconds (process running for 7.07)
+2024-12-19 14:26:09 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-19 16:02:04 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.localnews.lajmi.controller.LajmiControllerTest]: LajmiControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-19 16:02:04 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.localnews.lajmi.LajmiApplication for test class com.localnews.lajmi.controller.LajmiControllerTest
+2024-12-19 16:02:06 WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/sylaj/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/sylaj/.m2/repository/org/json/json/20240303/json-20240303.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-12-19 16:02:06 INFO  c.l.l.controller.LajmiControllerTest - Starting LajmiControllerTest using Java 19.0.1 with PID 33008 (started by sylaj in C:\dren\LocalNews\backend\micro-services\lajmi)
+2024-12-19 16:02:06 INFO  c.l.l.controller.LajmiControllerTest - The following 1 profile is active: "native"
+2024-12-19 16:02:08 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2024-12-19 16:02:08 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2024-12-19 16:02:08 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2024-12-19 16:02:08 INFO  c.l.l.controller.LajmiControllerTest - Started LajmiControllerTest in 4.428 seconds (process running for 5.96)
+2024-12-19 16:02:09 INFO  c.l.lajmi.controller.LajmiController - Lajmi com.localnews.lajmi.entity.Lajmi@5790cbcb has been saved
+2024-12-20 13:17:05 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.localnews.lajmi.controller.LajmiControllerTest]: LajmiControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-20 13:17:05 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.localnews.lajmi.LajmiApplication for test class com.localnews.lajmi.controller.LajmiControllerTest
+2024-12-20 13:17:08 WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/sylaj/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/sylaj/.m2/repository/org/json/json/20240303/json-20240303.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-12-20 13:17:08 INFO  c.l.l.controller.LajmiControllerTest - Starting LajmiControllerTest using Java 19.0.1 with PID 19708 (started by sylaj in C:\dren\LocalNews\backend\micro-services\lajmi)
+2024-12-20 13:17:08 INFO  c.l.l.controller.LajmiControllerTest - The following 1 profile is active: "native"
+2024-12-20 13:17:13 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2024-12-20 13:17:13 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2024-12-20 13:17:13 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+2024-12-20 13:17:13 INFO  c.l.l.controller.LajmiControllerTest - Started LajmiControllerTest in 6.715 seconds (process running for 9.341)
+2024-12-20 13:17:13 INFO  c.l.lajmi.controller.LajmiController - Lajmi com.localnews.lajmi.entity.Lajmi@5972e3a has been saved
+2024-12-20 13:18:07 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.localnews.lajmi.controller.LajmiControllerTest]: LajmiControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-20 13:18:07 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.localnews.lajmi.LajmiApplication for test class com.localnews.lajmi.controller.LajmiControllerTest
+2024-12-20 13:18:10 WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/sylaj/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/sylaj/.m2/repository/org/json/json/20240303/json-20240303.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-12-20 13:18:10 INFO  c.l.l.controller.LajmiControllerTest - Starting LajmiControllerTest using Java 19.0.1 with PID 16040 (started by sylaj in C:\dren\LocalNews\backend\micro-services\lajmi)
+2024-12-20 13:18:10 INFO  c.l.l.controller.LajmiControllerTest - The following 1 profile is active: "native"
+2024-12-20 13:18:14 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2024-12-20 13:18:14 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2024-12-20 13:18:14 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+2024-12-20 13:18:14 INFO  c.l.l.controller.LajmiControllerTest - Started LajmiControllerTest in 6.692 seconds (process running for 8.959)
+2024-12-20 13:18:15 INFO  c.l.lajmi.controller.LajmiController - Lajmi com.localnews.lajmi.entity.Lajmi@2bf0c70d has been saved
+2024-12-20 13:19:29 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.localnews.lajmi.repository.LajmiRepositoryTest]: LajmiRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-20 13:19:29 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.localnews.lajmi.LajmiApplication for test class com.localnews.lajmi.repository.LajmiRepositoryTest
+2024-12-20 13:19:32 WARN  o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/sylaj/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/sylaj/.m2/repository/org/json/json/20240303/json-20240303.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-12-20 13:19:32 INFO  c.l.l.repository.LajmiRepositoryTest - Starting LajmiRepositoryTest using Java 19.0.1 with PID 28556 (started by sylaj in C:\dren\LocalNews\backend\micro-services\lajmi)
+2024-12-20 13:19:32 INFO  c.l.l.repository.LajmiRepositoryTest - The following 1 profile is active: "native"
+2024-12-20 13:19:33 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-20 13:19:33 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-20 13:19:33 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 347 ms. Found 4 JPA repository interfaces.
+2024-12-20 13:19:33 INFO  o.s.b.t.a.j.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2024-12-20 13:19:33 INFO  o.s.j.d.e.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:50e850a7-5602-4723-91ce-4557eb8aa63f;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-12-20 13:19:34 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-20 13:19:34 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-20 13:19:34 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-20 13:19:35 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-20 13:19:35 WARN  org.hibernate.dialect.Dialect - HHH000511: The 2.2.224 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
+2024-12-20 13:19:35 WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-20 13:19:35 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@24eecabf']
+	Database driver: undefined/unknown
+	Database version: 2.2.224
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-20 13:19:37 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-20 13:19:37 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-20 13:19:38 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-20 13:19:39 INFO  c.l.l.repository.LajmiRepositoryTest - Started LajmiRepositoryTest in 8.926 seconds (process running for 11.285)
+2024-12-20 13:19:40 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+>>>>>>> Stashed changes

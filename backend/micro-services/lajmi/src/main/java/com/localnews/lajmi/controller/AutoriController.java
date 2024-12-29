@@ -4,10 +4,8 @@ import com.localnews.lajmi.client.UserClient;
 import com.localnews.lajmi.entity.Lajmi;
 import com.localnews.lajmi.response.AutoriDto;
 import com.localnews.lajmi.service.LajmiService;
-<<<<<<< Updated upstream
 import com.localnews.lajmi.service.TagLajmiService;
-=======
->>>>>>> Stashed changes
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,10 +18,8 @@ public class AutoriController{
 
     private final LajmiService lajmiService;
     private final UserClient userClient;
-<<<<<<< Updated upstream
     private final TagLajmiService tagLajmiService;
-=======
->>>>>>> Stashed changes
+
 
 
     @PostMapping
@@ -45,7 +41,6 @@ public class AutoriController{
         }
     }
 
-<<<<<<< Updated upstream
     @PostMapping("/tagLajmi/{tagId}/{lajmiId}")
     public void addTagToLajmi(@PathVariable Integer lajmiId, @PathVariable Integer tagId) {
         tagLajmiService.shtoTagLajmi(lajmiId, tagId);
@@ -57,8 +52,7 @@ public class AutoriController{
         return ResponseEntity.ok().build();
     }
 
-=======
->>>>>>> Stashed changes
+
     @GetMapping
     public ResponseEntity<String> secured(){
         return ResponseEntity.ok("Hello from a secured port");

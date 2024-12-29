@@ -2,7 +2,6 @@ package com.localnews.lajmi.controller;
 
 import com.localnews.lajmi.entity.Lajmi;
 import com.localnews.lajmi.entity.Tag;
-import com.localnews.lajmi.service.LajmiService;
 import com.localnews.lajmi.service.TagLajmiService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

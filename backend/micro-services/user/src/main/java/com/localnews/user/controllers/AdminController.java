@@ -18,4 +18,5 @@ public class AdminController {
     public ResponseEntity<String> updateRole(@PathVariable("userId") Integer userId, @RequestBody Autori autori){
         return autoriService.updateRole(userId, autori);
     }
+
 }

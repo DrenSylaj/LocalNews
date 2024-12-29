@@ -17,11 +17,6 @@ public class TagController {
 
     private final TagService service;
 
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public void saveTag(@RequestBody Tag tag){
-        service.saveTag(tag);
-    }
 
     @GetMapping
     public ResponseEntity<List<Tag>> getAllTags(){

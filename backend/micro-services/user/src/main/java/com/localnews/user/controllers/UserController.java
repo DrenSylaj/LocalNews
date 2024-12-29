@@ -61,32 +61,17 @@ public class UserController {
         return jwtService.findUserByJwt(jwt).orElseThrow(() -> new NotFoundException("User not found"));
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<User> updateUserRole(
-            @PathVariable Integer id,
-            @RequestBody RoleUpdateRequest request
-    ) {
-        User user = service.findUserById(id).orElseThrow(() -> new NotFoundException("User not found"));
-        user.setRole(request.getRole());
-        service.saveUser(user);
-        return ResponseEntity.ok(user);
-    }
-    @PutMapping("/autor/{userId}")
-    public ResponseEntity<String> updateRole(@PathVariable("userId") Integer userId, @RequestBody Autori autori){
-        User user = findUserById(userId);
-        if (user == null) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
-        }
+//    @PutMapping("/{id}")
+//    public ResponseEntity<User> updateUserRole(
+//            @PathVariable Integer id,
+//            @RequestBody RoleUpdateRequest request
+//    ) {
+//        User user = service.findUserById(id).orElseThrow(() -> new NotFoundException("User not found"));
+//        user.setRole(request.getRole());
+//        service.saveUser(user);
+//        return ResponseEntity.ok(user);
+//    }
 
-        user.setRole(Role.valueOf("ROLE_AUTHOR"));
-
-        autori.setUserId(user.getId());
-
-        if(autoriService.findByUserId(userId) == null){
-            autoriRepository.save(autori);
-        }
-        return ResponseEntity.ok("Role updated and Autori saved (if needed)");
-    }
 
 
 

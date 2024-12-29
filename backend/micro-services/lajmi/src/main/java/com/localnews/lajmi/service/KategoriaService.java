@@ -19,4 +19,8 @@ public class KategoriaService {
     public List<Kategoria> allKategorite(){
         return kategoriaRepository.findAll();
     }
+
+    public void deleteKategoria(Integer id){
+        kategoriaRepository.deleteById(id);
+    }
 }

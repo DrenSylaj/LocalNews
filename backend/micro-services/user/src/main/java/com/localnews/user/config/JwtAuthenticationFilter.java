@@ -25,8 +25,8 @@ import java.util.List;
 @RequiredArgsConstructor
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
-//    @Value("${application.config.secret-key}")
-    private String secretKey = "598CCC87F435776673862D86F8B93B2B67A0C2CEA75F91CF89A285D971E7C12F";
+    @Value("${security.secret.key}")
+    private String secretKey;
 
 
     @Override
@@ -46,6 +46,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         jwt = authHeader.substring(7);
 
         try{
+            System.out.println("Secret Key: "+secretKey);
             SecretKey key = Keys.hmacShaKeyFor(secretKey.getBytes());
             Claims claims = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(jwt).getBody();
 

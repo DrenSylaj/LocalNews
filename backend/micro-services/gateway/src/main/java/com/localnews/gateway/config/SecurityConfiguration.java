@@ -6,7 +6,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.web.server.SecurityWebFiltersOrder;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 
@@ -29,11 +31,11 @@ public class SecurityConfiguration {
         http.csrf().disable()
                 .authorizeExchange()
                 .pathMatchers("/api/v1/autori/**").hasRole("AUTHOR")
-                .pathMatchers("/api/v1/admin/**").hasRole("ADMIN")
-                .pathMatchers("/api/v1/auth/**").permitAll()
+                .pathMatchers("/api/v1/admin/**", "api/v1/adminLajmi/**").hasRole("ADMIN")
+                .pathMatchers("/api/v1/auth/**", "/api/v1/lajmet/**").permitAll()
                 .anyExchange().authenticated()
                 .and()
-                .addFilterBefore(jwtAuthenticationFilter, SecurityWebFiltersOrder.AUTHENTICATION); gi
+                .addFilterBefore(jwtAuthenticationFilter, SecurityWebFiltersOrder.AUTHENTICATION); 
 
         return http.build();
     }

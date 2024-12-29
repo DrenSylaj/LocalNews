@@ -47,10 +47,5 @@ public class LajmiController {
         return lajmiService.findByAutoriId(autoriId);
     }
 
-    @DeleteMapping("/{id}")
-    public String deleteLajmi(@PathVariable int id) {
-        logger.info("Lajmi with id: "+id+" has been deleted");
-        return lajmiService.deleteLajmi(id);
 
-    }
 }

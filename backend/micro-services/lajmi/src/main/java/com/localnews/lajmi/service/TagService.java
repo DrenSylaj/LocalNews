@@ -21,6 +21,9 @@ public class TagService {
     public void saveTag(Tag tag){
         repository.save(tag);
     }
+    public void deleteTagById(Integer id){
+        repository.deleteById(id);
+    }
 
     public List<Tag> findAllTags(){
         return repository.findAll();

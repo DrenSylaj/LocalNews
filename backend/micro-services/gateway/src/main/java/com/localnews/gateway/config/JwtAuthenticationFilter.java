@@ -3,10 +3,10 @@ package com.localnews.gateway.config;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpResponse;
-import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -24,7 +24,8 @@ import java.util.List;
 @Component
 public class JwtAuthenticationFilter implements WebFilter {
 
-    private String secretKey = "598CCC87F435776673862D86F8B93B2B67A0C2CEA75F91CF89A285D971E7C12F";
+    @Value("${security.secret.key}")
+    private String secretKey;
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
@@ -40,6 +41,7 @@ public class JwtAuthenticationFilter implements WebFilter {
         String token = authHeader.substring(7);
 
         try {
+            System.out.println("Secret Key: "+secretKey);
             SecretKey key = Keys.hmacShaKeyFor(secretKey.getBytes());
             Claims claims = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token).getBody();
 

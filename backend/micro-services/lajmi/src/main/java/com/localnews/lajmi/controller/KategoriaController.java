@@ -15,11 +15,6 @@ import java.util.List;
 public class KategoriaController {
     private final KategoriaService kategoriaService;
 
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public void saveKategoria(@RequestBody Kategoria kategoria){
-        kategoriaService.saveKategoria(kategoria);
-    }
 
     @GetMapping
     public ResponseEntity<List<Kategoria>> getAllKategorite(){

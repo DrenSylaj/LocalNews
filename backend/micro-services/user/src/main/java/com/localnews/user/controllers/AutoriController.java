@@ -3,6 +3,7 @@ package com.localnews.user.controllers;
 import com.localnews.user.DTO.AutoriDTO;
 import com.localnews.user.entities.Autori;
 import com.localnews.user.services.AutoriService;
+import jakarta.annotation.security.PermitAll;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -24,8 +25,9 @@ public class AutoriController {
         return autoriService.findByJwt(jwt);
     }
 
+    @PermitAll
     @GetMapping("/secure")
-    ResponseEntity<String> secured(@RequestHeader("Authorization")String jwt){
+    ResponseEntity<String> secured(){
         return ResponseEntity.ok("Hello from secured port");
     }
 }

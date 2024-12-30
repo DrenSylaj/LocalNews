@@ -1,10 +1,10 @@
-package com.localnews.lajmi.controller;
+package com.LocalNews.Komenti.controller;
 
-
+import com.LocalNews.Komenti.client.UserClient;
+import com.LocalNews.Komenti.entity.Komenti;
+import com.LocalNews.Komenti.service.KomentiService;
+import com.LocalNews.Komenti.service.LikeService;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.localnews.lajmi.entity.Kategoria;
-import com.localnews.lajmi.entity.Lajmi;
-import com.localnews.lajmi.service.LajmiService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -17,52 +17,55 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
-import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import java.util.Arrays;
 import java.util.List;
 
-import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
-@WebMvcTest(controllers = LajmiController.class)
+@WebMvcTest(controllers = KomentiController.class)
 @AutoConfigureMockMvc(addFilters = false)
 @ExtendWith(MockitoExtension.class)
-public class LajmiControllerTest {
+public class KomentiControllerTest {
+
     @Autowired
     private MockMvc mockMvc;
+
     @MockBean
-    private LajmiService lajmiService;
+    private KomentiService komentiService;
+
+    @MockBean
+    private LikeService likeService;
+
+    @MockBean
+    private UserClient userClient;
 
     @Autowired
     private ObjectMapper objectMapper;
 
-    private Lajmi lajmi;
-    private Kategoria kategoria;
+    private Komenti komenti;
 
     @BeforeEach
     public void init(){
-        kategoria = Kategoria.builder().name("Sport").build();
-        lajmi = Lajmi.builder().teksti("Kosova").kategoria(kategoria).build();
+        komenti = Komenti.builder()
+                .teksti("Kosova")
+                .creatorId(1)
+                .lajmiId(1)
+                .build();
     }
 
     @Test
-    public void LajmiController_GetAllLajmet_ReturnOk() throws Exception {
+    public void KomentiController_getAllKomentet_returnsSavedKomentet() throws Exception{
+        List<Komenti> komentet = List.of(komenti);
+        when(komentiService.findAllKomentet()).thenReturn(komentet);
 
-
-        List<Lajmi> lajmetList = Arrays.asList(new Lajmi(), new Lajmi());
-        given(lajmiService.findAllLajmet()).willReturn(lajmetList);
-
-
-        ResultActions response = mockMvc.perform(get("/api/v1/lajmet")
+        ResultActions response = mockMvc.perform(get("/api/v1/komentet")
                 .contentType(MediaType.APPLICATION_JSON));
 
-        response.andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.length()").value(lajmetList.size()));
+
+        response.andExpect(MockMvcResultMatchers.status().isOk());
     }
-
-
 }

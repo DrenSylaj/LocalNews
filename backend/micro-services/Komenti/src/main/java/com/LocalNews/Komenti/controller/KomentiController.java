@@ -9,7 +9,6 @@ import com.LocalNews.Komenti.entity.Komenti;
 import com.LocalNews.Komenti.entity.Like;
 import com.LocalNews.Komenti.service.KomentiService;
 import com.LocalNews.Komenti.service.LikeService;
-import jakarta.ws.rs.Path;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;

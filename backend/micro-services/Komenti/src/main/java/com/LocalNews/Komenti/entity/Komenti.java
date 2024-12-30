@@ -1,12 +1,10 @@
 package com.LocalNews.Komenti.entity;
 
-import com.LocalNews.Komenti.DTO.UserDTO;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.Fetch;
 
 import java.io.Serializable;
 import java.util.ArrayList;

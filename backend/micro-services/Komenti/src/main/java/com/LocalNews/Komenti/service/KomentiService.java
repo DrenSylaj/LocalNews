@@ -4,7 +4,6 @@ import com.LocalNews.Komenti.DTO.KomentiResponse;
 import com.LocalNews.Komenti.DTO.UserDTO;
 import com.LocalNews.Komenti.entity.Komenti;
 import com.LocalNews.Komenti.repository.KomentiRepository;
-import jakarta.transaction.Transactional;
 import jakarta.ws.rs.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.CacheEvict;

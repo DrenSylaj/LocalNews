@@ -51,10 +51,6 @@ public class UserController {
         return service.findUserById(id).get();
     }
 
-    @GetMapping("/ankesat/{userId}")
-    public List<AnkesaDTO> getUserAnkesat(@PathVariable Integer userId) {
-        return ankesaClient.getAnkesatByUserId(userId);
-    }
 
     @GetMapping("/jwt")
     public User getUserByJwt(@RequestHeader("Authorization") String jwt) {

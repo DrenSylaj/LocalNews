@@ -42,3 +42,4 @@ management:
 application:
   config:
     komentet-url: http://localhost:8071/api/v1/komentet
+    users-url: http://localhost:8111/api/v1/autori

@@ -8,7 +8,10 @@ import com.LocalNews.Komenti.entity.Like;
 import com.LocalNews.Komenti.repository.DislikeRepository;
 import com.LocalNews.Komenti.repository.KomentiRepository;
 import com.LocalNews.Komenti.repository.LikeRepository;
+import jakarta.ws.rs.NotFoundException;
 import lombok.AllArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,24 +26,22 @@ public class LikeService {
 
     private final UserClient userClient;
 
-    public Like addLike(Integer userId, Integer commentId) {
+    @CacheEvict(value = "komenti", key="#id")
+    public Like addLike(Integer userId, Integer id) {
 
-        if (isDisliked(userId, commentId)) {
-            Komenti komenti = komentiRepository.findById(commentId).get();
+        Komenti komenti = komentiRepository.findById(id).orElseThrow(
+                () -> new RuntimeException("Komenti nuk ekziston!")
+        );
+
+
+        if (isDisliked(userId, id)) {
             Dislike dislike = dislikeRepository.findByUserIdAndComment(userId, komenti).get();
-
             deleteDislike(dislike.getId());
-        } else if (isLiked(userId, commentId)) {
-            Komenti komenti = komentiRepository.findById(commentId).get();
+        } else if (isLiked(userId, id)) {
             Like like = likeRepository.findByUserIdAndComment(userId, komenti).get();
-
             deleteLike(like.getId());
             return null;
         }
-
-        Komenti komenti = komentiRepository.findById(commentId).orElseThrow(
-                () -> new RuntimeException("Komenti nuk ekziston!")
-        );
 
         Like like = new Like();
         like.setUserId(userId);
@@ -49,15 +50,16 @@ public class LikeService {
         return likeRepository.save(like);
     }
 
-    public Dislike addDislike(Integer userId, Integer commentId) {
+    @CacheEvict(value = "komenti", key="#id")
+    public Dislike addDislike(Integer userId, Integer id) {
 
-        if (isLiked(userId, commentId)) {
-            Komenti komenti = komentiRepository.findById(commentId).get();
+        if (isLiked(userId, id)) {
+            Komenti komenti = komentiRepository.findById(id).get();
             Like like = likeRepository.findByUserIdAndComment(userId, komenti).get();
 
             deleteLike(like.getId());
-        } else if (isDisliked(userId, commentId)) {
-            Komenti komenti = komentiRepository.findById(commentId).get();
+        } else if (isDisliked(userId, id)) {
+            Komenti komenti = komentiRepository.findById(id).get();
             Dislike dislike = dislikeRepository.findByUserIdAndComment(userId, komenti).get();
 
             deleteDislike(dislike.getId());
@@ -69,7 +71,7 @@ public class LikeService {
             throw new IllegalArgumentException("Useri nuk ekziston!");
         }
 
-        Komenti komenti = komentiRepository.findById(commentId).orElseThrow(
+        Komenti komenti = komentiRepository.findById(id).orElseThrow(
                 () -> new RuntimeException("Komenti nuk ekziston!")
         );
 
@@ -117,5 +119,6 @@ public class LikeService {
         );
         return dislikeRepository.findByUserIdAndComment(userId, komenti).isPresent();
     }
+
 
 }

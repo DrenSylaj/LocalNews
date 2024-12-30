@@ -71,14 +71,13 @@ public class AnkesaService {
                 () -> new NotFoundException("Ankesa nuk u gjete!")
         );
 
-        if (user.getId() != ankesa.getUserId() && !user.getRole().toString().equals("ADMIN"))
+        System.out.println(user.getRole());
+        System.out.println(user.getId() != ankesa.getUserId());
+
+        if (user.getId() != ankesa.getUserId() && !user.getRole().toString().equals("ROLE_ADMIN"))
             throw new NoPermissionException("Nuk keni autorizim per te fshire kete koment!");
 
         ankesaRepository.deleteById(id);
-    }
-    @CacheEvict(value = "ankesa", key="#id")
-    public void deleteAnkesatByUserId(Integer id) {
-        ankesaRepository.deleteAllByUserId(id);
     }
 
 

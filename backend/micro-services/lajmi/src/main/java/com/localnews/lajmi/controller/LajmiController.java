@@ -42,7 +42,7 @@ public class LajmiController {
         return ResponseEntity.ok(lajmiService.findLajmetWithComments(lajmiId));
     }
 
-    @GetMapping("/{autoriId}")
+    @GetMapping("/autori/{autoriId}")
     public List<Lajmi> getLajmetByAutoriId(@PathVariable("autori-id") Integer autoriId){
         return lajmiService.findByAutoriId(autoriId);
 

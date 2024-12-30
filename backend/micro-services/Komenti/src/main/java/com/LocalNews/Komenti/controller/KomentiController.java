@@ -1,5 +1,6 @@
 package com.LocalNews.Komenti.controller;
 
+import com.LocalNews.Komenti.DTO.KomentiResponse;
 import com.LocalNews.Komenti.DTO.ReplyRequest;
 import com.LocalNews.Komenti.DTO.UserDTO;
 import com.LocalNews.Komenti.client.UserClient;
@@ -10,6 +11,7 @@ import com.LocalNews.Komenti.service.KomentiService;
 import com.LocalNews.Komenti.service.LikeService;
 import jakarta.ws.rs.Path;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -89,15 +91,8 @@ public class KomentiController {
         service.shtoReply(komenti_id, request.getTeksti(), user.getId());
     }
 
-    @GetMapping("/replies/{parentId}")
-    public ResponseEntity<List<Komenti>> getReplies(@PathVariable Integer parentId) {
-        return ResponseEntity.ok(service.getReplies(parentId));
-    }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Komenti> findKomentiById(@PathVariable("id") Integer id) {
-        return ResponseEntity.ok(service.findKomentiById(id));
-    }
+
 
 
     // Like & Dislike API !!!
@@ -141,34 +136,8 @@ public class KomentiController {
     }
 
     // Lajmi API !!
-    @GetMapping("/lajmi/{lajmi-id}")
-    public ResponseEntity<List<Komenti>> findAllKomentetByLajmi(
-            @PathVariable("lajmi-id") Integer lajmiId
-    ) {
-        return ResponseEntity.ok(service.findAllKomentetByLajmiId(lajmiId));
-    }
 
 
-    // Inifinite Scroll!!
-    @GetMapping("/scroll/{lajmiId}")
-    public ResponseEntity<List<Komenti>> getComments(
-            @PathVariable Integer lajmiId,
-            @RequestParam int page,
-            @RequestParam int size
-    ) {
-        List<Komenti> comments = service.getComments(lajmiId, page, size);
-        return ResponseEntity.ok(comments);
-    }
-
-    @GetMapping("/replies/scroll/{komentiId}")
-    public ResponseEntity<List<Komenti>> getReplies(
-            @PathVariable Integer komentiId,
-            @RequestParam int page,
-            @RequestParam int size
-    ) {
-        List<Komenti> comments = service.getReplies(komentiId, page, size);
-        return ResponseEntity.ok(comments);
-    }
 
 }
 

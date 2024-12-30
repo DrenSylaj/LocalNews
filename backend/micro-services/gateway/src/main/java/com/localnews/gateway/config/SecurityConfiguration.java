@@ -31,8 +31,11 @@ public class SecurityConfiguration {
         http.csrf().disable()
                 .authorizeExchange()
                 .pathMatchers("/api/v1/autori/**").hasRole("AUTHOR")
+                .pathMatchers("api/v1/komentet/**").authenticated()
+                .pathMatchers("api/v1/ankesat/**").authenticated()
                 .pathMatchers("/api/v1/admin/**", "api/v1/adminLajmi/**").hasRole("ADMIN")
                 .pathMatchers("/api/v1/auth/**", "/api/v1/lajmet/**").permitAll()
+                .pathMatchers("/api/v1/komenti/noAuth/**").permitAll()
                 .anyExchange().authenticated()
                 .and()
                 .addFilterBefore(jwtAuthenticationFilter, SecurityWebFiltersOrder.AUTHENTICATION); 

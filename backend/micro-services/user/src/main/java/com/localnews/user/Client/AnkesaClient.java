@@ -13,8 +13,5 @@ public interface AnkesaClient {
 
     @GetMapping("/user/{userId}")
     List<AnkesaDTO> getAnkesatByUserId(@PathVariable Integer userId);
-
-    @DeleteMapping("/delete/{userId}")
-    void deleteAnkesatByUserId(@PathVariable Integer userId);
 }
 

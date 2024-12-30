@@ -31,7 +31,7 @@ public class Komenti implements Serializable {
 
     @OneToMany(mappedBy = "comment",cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
-    private List<Like> Like = new ArrayList<>();
+    private List<Like> likes = new ArrayList<>();
 
     @OneToMany(mappedBy = "comment",cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
@@ -50,9 +50,10 @@ public class Komenti implements Serializable {
     @Column(name = "creator_id")
     private Integer creatorId;
 
+
     @JsonProperty("likes")
     public int getLikeCount() {
-        return Like != null ? Like.size() : 0;
+        return likes != null ? likes.size() : 0;
     }
 
     @JsonProperty("dislikes")

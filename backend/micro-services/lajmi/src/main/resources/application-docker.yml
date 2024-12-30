@@ -33,3 +33,4 @@ spring:
 application:
   config:
     komentet-url: http://komentet:8071/api/v1/komentet
+    users-url: http://users:8111/api/v1/autori

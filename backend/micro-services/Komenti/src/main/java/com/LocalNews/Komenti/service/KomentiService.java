@@ -1,5 +1,6 @@
 package com.LocalNews.Komenti.service;
 
+import com.LocalNews.Komenti.DTO.KomentiResponse;
 import com.LocalNews.Komenti.DTO.UserDTO;
 import com.LocalNews.Komenti.entity.Komenti;
 import com.LocalNews.Komenti.repository.KomentiRepository;
@@ -9,11 +10,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -42,10 +45,7 @@ public class KomentiService {
                 () -> new NotFoundException("Komenti me id" + id + " nuk u gjete!")
         );
 
-        System.out.println(user.getRole().toString());
-        System.out.println(user.getRole().toString().equals("ADMIN"));
-
-        if (user.getId() != komenti.getCreatorId() && !user.getRole().toString().equals("ADMIN")) {
+        if (user.getId() != komenti.getCreatorId() && !user.getRole().toString().equals("ROLE_ADMIN")) {
             throw new RuntimeException("Nuk keni autroizim per fshirjen e ktij komenti!");
         }
         repository.deleteById(id);
@@ -102,11 +102,13 @@ public class KomentiService {
     }
 
     // Infinite Scroll !!!
-    public List<Komenti> getComments(Integer lajmiId, int page, int size) {
+    public List<Komenti> getPaginatedComments(Integer lajmiId, int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
         Page<Komenti> commentsPage = repository.findByLajmiIdAndParentIsNull(lajmiId, pageable);
         return commentsPage.getContent();
     }
+
+
 
     public List<Komenti> getReplies(Integer parentId, int page, int size) {
         Pageable pageable = PageRequest.of(page, size);

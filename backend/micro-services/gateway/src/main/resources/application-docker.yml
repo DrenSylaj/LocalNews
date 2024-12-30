@@ -26,6 +26,11 @@ spring:
           predicates:
             - Path=/api/v1/komentet/**
 
+        - id: komentiNoAuth
+          uri: http://komentet:8071
+          predicates:
+            - Path=/api/v1/komenti/noAuth/**
+
         - id: lajmet
           uri: http://lajmet:8090
           predicates:
@@ -47,12 +52,12 @@ spring:
             - Path=/api/v1/user/**
 
         - id: adminUser
-          uri: http://localhost:8111
+          uri: http://users:8111
           predicates:
             - Path=/api/v1/admin/**
 
         - id: adminLajmi
-          uri: http://localhost:8090
+          uri: http://lajmet:8090
           predicates:
             - Path=/api/v1/adminLajmi/**
 
@@ -60,15 +65,6 @@ spring:
           uri: http://lajmet:8090
           predicates:
             - Path=/api/v1/autori/**
-
-
-        - id: users
-          uri: http://users:8111
-          predicates:
-            - Path=/api/v1/auth/**
-            - Path=/api/v1/autori/**
-            - Path=/api/v1/user/**
-
 
 server:
   port: 8222

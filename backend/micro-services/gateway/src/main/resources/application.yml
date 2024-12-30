@@ -28,6 +28,11 @@ spring:
           predicates:
             - Path=/api/v1/komentet/**
 
+        - id: komentiNoAuth
+          uri: http://localhost:8071
+          predicates:
+            - Path=/api/v1/komenti/noAuth/**
+
         - id: lajmet
           uri: http://localhost:8090
           predicates:

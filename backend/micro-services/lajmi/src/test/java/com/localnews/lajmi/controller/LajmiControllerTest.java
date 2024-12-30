@@ -20,8 +20,12 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
+import java.util.Arrays;
+import java.util.List;
+
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.doNothing;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
 @WebMvcTest(controllers = LajmiController.class)
@@ -46,16 +50,18 @@ public class LajmiControllerTest {
     }
 
     @Test
-    public void LajmiController_CreateLajmi_ReturnCreated() throws Exception{
-    //        given(lajmiService.saveLajmi(ArgumentMatchers.any())).willAnswer(invocationOnMock -> invocationOnMock.getArgument(0));
+    public void LajmiController_GetAllLajmet_ReturnOk() throws Exception {
 
-        doNothing().when(lajmiService).saveLajmi(ArgumentMatchers.any(Lajmi.class));
+        List<Lajmi> lajmetList = Arrays.asList(new Lajmi(), new Lajmi());
+        given(lajmiService.findAllLajmet()).willReturn(lajmetList);
 
-        ResultActions response = mockMvc.perform(post("/api/v1/lajmet")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(lajmi)));
 
-        response.andExpect(MockMvcResultMatchers.status().isCreated());
+        ResultActions response = mockMvc.perform(get("/api/v1/lajmet")
+                .contentType(MediaType.APPLICATION_JSON));
+
+        response.andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.length()").value(lajmetList.size()));
     }
+
 
 }

@@ -35,7 +35,6 @@ public class UserService {
                 () -> new NotFoundException("Nuk u gjete!")
         );
 
-        ankesaClient.deleteAnkesatByUserId(id);
         repository.deleteById(id);
     }
 }

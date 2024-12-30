@@ -35,15 +35,19 @@ public class AnkesaController {
         return ResponseEntity.ok(savedAnkesa);
     }
 
-    @GetMapping
 
+
+    @GetMapping
     public ResponseEntity<List<Ankesa>> getAllAnkesa() {
         List<Ankesa> ankesas = ankesaService.getAllAnkesa();
         return ResponseEntity.ok(ankesas);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Ankesa> getAnkesaById(@PathVariable Integer id) {
+    public ResponseEntity<Ankesa> getAnkesaById(
+            @PathVariable Integer id,
+            @RequestHeader("Authorization") String token
+    ) {
         Ankesa ankesa = ankesaService.getAnkesaById(id);
         return ResponseEntity.ok(ankesa);
     }
@@ -61,10 +65,6 @@ public class AnkesaController {
         return ResponseEntity.noContent().build();
     }
 
-    @DeleteMapping("/delete/{userId}")
-    public void deleteAnkesatByUserId(@PathVariable Integer userId) {
-        ankesaService.deleteAnkesatByUserId(userId);
-    }
 
 
 }
